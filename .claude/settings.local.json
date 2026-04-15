@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xattr /Users/marcinbialecki/Downloads/bli-min-frend_10.html)",
+      "Bash(xattr -l \"/Users/marcinbialecki/Downloads/bli-min-frend_10.html\")",
+      "Bash(/dev/null ls:*)",
+      "Bash(grep -iE \"\\\\.\\(jpg|jpeg|png|webp\\)$\")",
+      "Bash(ls /Users/marcinbialecki/Desktop/marcinbialecki.no/assets/images/ find /Users/marcinbialecki/Desktop -name *.jpg -o -name *.jpeg -o -name *.png)",
+      "Bash(find /Users/marcinbialecki/Pictures -name *.jpg -o -name *.jpeg -o -name *.png)",
+      "Bash(head -10 find /Users/marcinbialecki/Documents -maxdepth 3 -name *.jpg -o -name *.jpeg -o -name *.png)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(python3 -c \":*)",
+      "Bash(sips -g all /Users/marcinbialecki/Desktop/marcinbialecki.no/assets/images/marcin-profile.jpg)",
+      "Bash(python3 -:*)"
+    ]
+  }
+}

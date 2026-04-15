@@ -1,0 +1,3000 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marcin Białecki | IT Project Manager · Konsultant AI · WLC NORGE | Norwegia</title>
+  <meta name="description" content="Starszy IT PM w Bouvet (Bane NOR), CEO WLC NORGE i trener GenAI dla polskich przedsiębiorców w Norwegii. Ponad 7 lat łączenia norweskiego biznesu z polską technologią.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://marcinbialecki.no">
+  <meta property="og:title" content="Marcin Białecki — IT PM · Konsultant AI · WLC NORGE">
+  <meta property="og:description" content="Starszy IT PM, CEO agencji WordPress i trener AI w Norwegii. Zbudujmy razem coś wartościowego.">
+  <meta property="og:image" content="https://marcinbialecki.no/assets/images/og-image.jpg">
+  <meta property="og:url" content="https://marcinbialecki.no">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Fonts -->
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+/* =============================================
+   MARCIN BIAŁECKI — Personal Brand Site
+   Design System: Dark Glassmorphism 2025–2026
+   ============================================= */
+
+/* ── CUSTOM PROPERTIES ─────────────────────── */
+:root {
+  /* Backgrounds */
+  --bg-base:    #080B12;
+  --bg-surface: #0D1117;
+  --bg-elevated:#111827;
+
+  /* Glass */
+  --glass-bg:         rgba(255,255,255,0.04);
+  --glass-bg-hover:   rgba(255,255,255,0.07);
+  --glass-border:     rgba(255,255,255,0.08);
+  --glass-border-hover: rgba(255,255,255,0.16);
+  --glass-blur: blur(24px) saturate(160%);
+
+  /* Accents */
+  --accent-primary:   #4FC3F7;
+  --accent-secondary: #7986CB;
+  --accent-glow:      rgba(79,195,247,0.15);
+  --accent-glow-strong: rgba(79,195,247,0.25);
+
+  /* Text */
+  --text-primary:   #E8EDF5;
+  --text-secondary: #8B95A8;
+  --text-muted:     #4A5568;
+
+  /* Semantic */
+  --success: #4CAF50;
+  --border-subtle: rgba(255,255,255,0.06);
+
+  /* Shadows */
+  --shadow-card: 0 4px 24px rgba(0,0,0,0.4), 0 0 60px rgba(79,195,247,0.04);
+  --shadow-card-hover: 0 8px 40px rgba(0,0,0,0.5), 0 0 80px rgba(79,195,247,0.10);
+
+  /* Typography */
+  --font-display: 'Clash Display', sans-serif;
+  --font-body:    'Satoshi', sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+
+  /* Type Scale */
+  --text-hero: clamp(44px, 6.5vw, 92px);
+  --text-h2:   clamp(28px, 4vw, 52px);
+  --text-h3:   clamp(20px, 2.5vw, 28px);
+  --text-body-lg: clamp(17px, 1.5vw, 20px);
+  --text-body: 16px;
+  --text-small: 14px;
+  --text-caption: 12px;
+
+  /* Tracking */
+  --tracking-tight:  -0.04em;
+  --tracking-normal: -0.01em;
+  --tracking-wide:    0.12em;
+
+  /* Spacing */
+  --section-pad: clamp(80px, 10vw, 140px);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+/* Light mode */
+[data-theme="light"] {
+  --bg-base:    #F7F9FC;
+  --bg-surface: #FFFFFF;
+  --bg-elevated:#F0F4F8;
+  --glass-bg:   rgba(255,255,255,0.70);
+  --glass-bg-hover: rgba(255,255,255,0.85);
+  --glass-border: rgba(0,0,0,0.08);
+  --glass-border-hover: rgba(0,0,0,0.16);
+  --text-primary:   #0D1117;
+  --text-secondary: #4A5568;
+  --text-muted:     #8B95A8;
+  --border-subtle:  rgba(0,0,0,0.06);
+  --shadow-card: 0 2px 16px rgba(0,0,0,0.08);
+  --shadow-card-hover: 0 8px 32px rgba(0,0,0,0.14);
+  --accent-glow: rgba(79,195,247,0.12);
+  --accent-glow-strong: rgba(79,195,247,0.2);
+}
+
+/* ── RESET & BASE ───────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background-color 500ms var(--ease-in-out),
+              color 500ms var(--ease-in-out);
+}
+
+/* Atmospheric background */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 700px 500px at 10% 15%, rgba(79,195,247,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 500px 700px at 92% 55%, rgba(121,134,203,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 400px 300px at 50% 100%, rgba(79,195,247,0.04) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Grain texture */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.4;
+  z-index: 0;
+}
+
+main, section, nav, footer, header { position: relative; z-index: 1; }
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 20px;
+  background: var(--accent-primary);
+  color: #000;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  z-index: 9999;
+  transition: top 200ms;
+  text-decoration: none;
+}
+.skip-link:focus { top: 20px; }
+
+/* Focus rings */
+:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Typography */
+h1, h2, h3 {
+  font-family: var(--font-display);
+  line-height: 1.05;
+  color: var(--text-primary);
+}
+h2 { font-size: var(--text-h2); letter-spacing: var(--tracking-normal); }
+h3 { font-size: var(--text-h3); letter-spacing: var(--tracking-normal); }
+p { color: var(--text-secondary); }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 60px);
+}
+
+/* Section base */
+.section { padding: var(--section-pad) 0; }
+
+/* Eyebrow */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+  letter-spacing: var(--tracking-wide);
+  color: var(--accent-primary);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  display: block;
+}
+
+/* Section headline */
+.section-headline {
+  font-size: var(--text-h2);
+  font-weight: 700;
+  margin-bottom: 16px;
+  letter-spacing: var(--tracking-normal);
+}
+
+/* Section subheadline */
+.section-sub {
+  font-size: var(--text-body-lg);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 640px;
+  margin-bottom: clamp(48px, 6vw, 80px);
+}
+
+/* ── NAV ─────────────────────────────────── */
+.nav {
+  position: fixed;
+  top: 0; width: 100%;
+  height: 72px;
+  z-index: 100;
+  background: transparent;
+  transition: background 400ms ease, border-color 400ms ease, backdrop-filter 400ms ease;
+  border-bottom: 1px solid transparent;
+}
+.nav.scrolled {
+  background: rgba(8,11,18,0.85);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  border-bottom-color: var(--border-subtle);
+}
+[data-theme="light"] .nav.scrolled {
+  background: rgba(247,249,252,0.88);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 clamp(20px, 5vw, 60px);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent-primary);
+  letter-spacing: -0.02em;
+  flex-shrink: 0;
+}
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+}
+.nav-link {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: color 200ms;
+}
+.nav-link:hover { color: var(--text-primary); }
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Theme toggle */
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  transition: color 200ms, background 200ms;
+  padding: 0;
+}
+.theme-toggle:hover { color: var(--text-primary); background: var(--glass-bg); }
+.icon-moon { display: none; }
+[data-theme="light"] .icon-sun  { display: none; }
+[data-theme="light"] .icon-moon { display: block; }
+
+/* Book button */
+.btn-book {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--accent-primary);
+  border: 1px solid var(--accent-primary);
+  border-radius: 100px;
+  padding: 8px 20px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  transition: background 250ms, box-shadow 250ms;
+}
+.btn-book:hover {
+  background: var(--accent-glow);
+  box-shadow: 0 0 20px var(--accent-glow-strong);
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+}
+.hamburger span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transition: transform 300ms var(--ease-out), opacity 200ms, width 300ms;
+  transform-origin: center;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Mobile overlay */
+.mobile-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(8,11,18,0.97);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms ease;
+}
+.mobile-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+.overlay-close {
+  position: absolute;
+  top: 24px;
+  right: clamp(20px, 5vw, 60px);
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  transition: color 200ms;
+}
+.overlay-close:hover { color: var(--text-primary); }
+.overlay-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 48px;
+}
+.overlay-link {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text-primary);
+  opacity: 0;
+  transform: translateX(40px);
+  transition: color 200ms, opacity 400ms var(--ease-out), transform 400ms var(--ease-out);
+  padding: 8px 24px;
+}
+.overlay-link:hover { color: var(--accent-primary); }
+.mobile-overlay.open .overlay-link { opacity: 1; transform: translateX(0); }
+.mobile-overlay.open .overlay-link:nth-child(1) { transition-delay: 0ms; }
+.mobile-overlay.open .overlay-link:nth-child(2) { transition-delay: 60ms; }
+.mobile-overlay.open .overlay-link:nth-child(3) { transition-delay: 120ms; }
+.mobile-overlay.open .overlay-link:nth-child(4) { transition-delay: 180ms; }
+.overlay-cta {
+  text-align: center;
+  margin-bottom: 40px;
+  opacity: 0;
+  transition: opacity 400ms 240ms var(--ease-out);
+}
+.mobile-overlay.open .overlay-cta { opacity: 1; }
+.overlay-cta-label {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+.overlay-book { display: inline-flex; }
+.overlay-footer {
+  position: absolute;
+  bottom: 40px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  opacity: 0;
+  transition: opacity 400ms 300ms var(--ease-out);
+}
+.mobile-overlay.open .overlay-footer { opacity: 1; }
+
+/* ── HERO ─────────────────────────────────── */
+.hero {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding-top: 72px;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 6vw, 80px);
+  align-items: center;
+  padding-top: clamp(40px, 6vw, 60px);
+  padding-bottom: clamp(60px, 8vw, 100px);
+}
+
+/* Eyebrow */
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: var(--tracking-wide);
+  color: var(--accent-primary);
+  margin-bottom: 24px;
+}
+
+/* Kinetic headline */
+.hero-headline {
+  font-size: var(--text-hero);
+  font-weight: 700;
+  letter-spacing: var(--tracking-tight);
+  line-height: 1.05;
+  margin-bottom: 28px;
+  color: var(--text-primary);
+}
+.word-line {
+  display: block;
+  overflow: hidden;
+}
+.word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100%);
+  animation: wordReveal 700ms var(--ease-out) forwards;
+  animation-delay: calc(200ms + var(--word-index) * 80ms);
+}
+@keyframes wordReveal {
+  to { opacity: 1; transform: translateY(0); }
+}
+/* Space between words in same line */
+.word + .word { margin-left: 0.25em; }
+
+/* Hero sub */
+.hero-sub {
+  font-size: var(--text-body-lg);
+  color: var(--text-secondary);
+  line-height: 1.75;
+  max-width: 540px;
+  margin-bottom: 36px;
+}
+
+/* CTA cluster */
+.hero-cta {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+.btn-primary {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--accent-primary);
+  background: var(--glass-bg);
+  border: 1px solid var(--accent-primary);
+  border-radius: 8px;
+  padding: 14px 28px;
+  display: inline-flex;
+  align-items: center;
+  transition: background 300ms, box-shadow 300ms;
+}
+.btn-primary:hover {
+  background: var(--accent-glow);
+  box-shadow: 0 0 30px var(--accent-glow-strong);
+}
+.btn-ghost {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--text-secondary);
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  transition: color 200ms, border-color 200ms;
+}
+.btn-ghost:hover {
+  color: var(--text-primary);
+  border-color: var(--text-secondary);
+}
+
+/* Social proof */
+.hero-proof {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+.proof-num { color: var(--accent-primary); font-weight: 500; }
+.proof-sep { color: var(--text-muted); }
+.proof-available { display: flex; align-items: center; gap: 6px; }
+
+/* Pulse dot */
+.pulse-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--accent-primary);
+  display: inline-block;
+  position: relative;
+  flex-shrink: 0;
+}
+.pulse-dot::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: var(--accent-primary);
+  opacity: 0;
+  animation: pulse 2s ease infinite;
+}
+.pulse-dot.green { background: var(--success); }
+.pulse-dot.green::after { background: var(--success); }
+.pulse-dot.large { width: 10px; height: 10px; }
+@keyframes pulse {
+  0%   { opacity: 0.5; transform: scale(1); }
+  70%  { opacity: 0;   transform: scale(2); }
+  100% { opacity: 0;   transform: scale(1); }
+}
+
+/* Hero visual */
+.hero-visual-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.hero-ghost-text {
+  position: absolute;
+  font-family: var(--font-display);
+  font-size: 200px;
+  font-weight: 700;
+  color: var(--text-muted);
+  opacity: 0.03;
+  white-space: nowrap;
+  transform: rotate(-15deg);
+  top: -20px;
+  left: -40px;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+.hero-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  box-shadow: var(--shadow-card), inset 0 1px 0 rgba(255,255,255,0.08);
+  overflow: hidden;
+  width: 100%;
+  max-width: 380px;
+  aspect-ratio: 3/4;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  transition: box-shadow 400ms ease, border-color 400ms ease;
+}
+.hero-card:hover {
+  border-color: var(--glass-border-hover);
+  box-shadow: var(--shadow-card-hover), inset 0 1px 0 rgba(255,255,255,0.12);
+}
+.hero-photo-wrap {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-elevated);
+}
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+.hero-photo-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: linear-gradient(160deg, rgba(79,195,247,0.06) 0%, transparent 60%);
+}
+.hero-photo-placeholder span {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+}
+/* Hide placeholder if real photo loads */
+.hero-photo + .hero-photo-placeholder { display: none; }
+
+.hero-card-info {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  border-top: 1px solid var(--glass-border);
+}
+.hero-card-name {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.hero-card-title {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+}
+.hero-card-loc {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* Floating badge */
+.hero-badge {
+  position: absolute;
+  top: 20px;
+  right: -12px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--accent-primary);
+  border-radius: 100px;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-primary);
+  box-shadow: 0 4px 20px rgba(79,195,247,0.12);
+  white-space: nowrap;
+  z-index: 2;
+}
+
+/* ── BRAND BAR ───────────────────────────── */
+.brand-bar {
+  padding: 0;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  background: rgba(255,255,255,0.02);
+  overflow: hidden;
+}
+.brand-label {
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--text-muted);
+  padding: 24px 0 16px;
+}
+.brand-track-wrap {
+  overflow: hidden;
+  padding-bottom: 28px;
+}
+.brand-track {
+  display: flex;
+  gap: 60px;
+  width: max-content;
+  animation: brandScroll 28s linear infinite;
+}
+@keyframes brandScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.brand-item {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--text-primary);
+  opacity: 0.45;
+  white-space: nowrap;
+  transition: opacity 300ms;
+}
+.brand-item:hover { opacity: 0.75; }
+
+/* ── STATS ───────────────────────────────── */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.stat-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 32px 24px;
+  position: relative;
+  box-shadow: var(--shadow-card), inset 0 1px 0 rgba(255,255,255,0.06);
+  transition: all 300ms ease;
+}
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 24px; right: 24px;
+  height: 1px;
+  background: var(--accent-primary);
+  opacity: 0.3;
+  border-radius: 0 0 4px 4px;
+}
+.stat-card:hover {
+  background: var(--glass-bg-hover);
+  border-color: var(--glass-border-hover);
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-2px);
+}
+.stat-num {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: clamp(42px, 5vw, 64px);
+  font-weight: 700;
+  color: var(--accent-primary);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+.stat-label {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--text-secondary);
+  display: block;
+}
+
+/* ── SERVICES ────────────────────────────── */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.service-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: var(--shadow-card), inset 0 1px 0 rgba(255,255,255,0.06);
+  transition: all 300ms ease;
+  position: relative;
+  overflow: hidden;
+}
+/* Mouse glow via JS */
+.service-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    200px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(79,195,247,0.06),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 300ms;
+  pointer-events: none;
+}
+.service-card:hover::before { opacity: 1; }
+.service-card:hover {
+  background: var(--glass-bg-hover);
+  border-color: var(--glass-border-hover);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover), inset 0 1px 0 rgba(255,255,255,0.10);
+}
+.service-icon {
+  color: var(--accent-primary);
+  margin-bottom: 24px;
+  transition: filter 300ms;
+}
+.service-card:hover .service-icon {
+  filter: drop-shadow(0 0 12px rgba(79,195,247,0.5));
+}
+.service-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+  letter-spacing: var(--tracking-normal);
+}
+.service-desc {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+.service-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.service-cta {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--accent-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: gap 200ms;
+}
+.service-cta:hover { gap: 8px; }
+
+/* ── TAGS ────────────────────────────────── */
+.tag {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent-primary);
+  background: rgba(79,195,247,0.08);
+  border: 1px solid rgba(79,195,247,0.15);
+  border-radius: 100px;
+  padding: 4px 12px;
+  white-space: nowrap;
+}
+.tag-sm { font-size: 11px; padding: 3px 10px; }
+
+/* ── PROCESS ─────────────────────────────── */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+}
+.process-grid::before {
+  content: '';
+  position: absolute;
+  top: 32px;
+  left: 12%;
+  right: 12%;
+  height: 1px;
+  border-top: 1px dashed rgba(79,195,247,0.2);
+  z-index: 0;
+}
+.process-step {
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+.process-ghost {
+  font-family: var(--font-mono);
+  font-size: 120px;
+  font-weight: 700;
+  color: var(--text-primary);
+  opacity: 0.03;
+  line-height: 1;
+  display: block;
+  position: absolute;
+  top: -20px;
+  left: 0;
+  pointer-events: none;
+}
+.process-content { padding-top: 60px; }
+.process-title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  letter-spacing: var(--tracking-normal);
+}
+.process-badge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent-primary);
+  background: rgba(79,195,247,0.08);
+  border: 1px solid rgba(79,195,247,0.2);
+  border-radius: 100px;
+  padding: 2px 8px;
+  font-weight: 400;
+}
+.process-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ── CASE STUDIES ────────────────────────── */
+.cases-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.case-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card), inset 0 1px 0 rgba(255,255,255,0.04);
+  transition: all 300ms ease;
+  display: flex;
+  flex-direction: column;
+}
+.case-card:hover {
+  border-color: var(--glass-border-hover);
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-3px);
+}
+.case-card--wide {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  align-items: stretch;
+}
+.case-header {
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.case-card--wide .case-header {
+  height: auto;
+  width: 200px;
+  min-height: 200px;
+}
+.case-header--infra {
+  background: linear-gradient(135deg, rgba(79,195,247,0.08) 0%, rgba(121,134,203,0.05) 100%);
+}
+.case-header--ecom {
+  background: linear-gradient(135deg, rgba(121,134,203,0.08) 0%, rgba(79,195,247,0.05) 100%);
+}
+.case-header--ai {
+  background: linear-gradient(135deg, rgba(79,195,247,0.06) 0%, rgba(76,175,80,0.06) 100%);
+}
+.case-header-inner {
+  opacity: 0.8;
+}
+.case-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 20px 24px 12px;
+}
+.case-challenge {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  padding: 0 24px 12px;
+}
+.case-solution {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  padding: 0 24px 16px;
+}
+.case-result {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.5vw, 28px);
+  font-weight: 700;
+  color: var(--accent-primary);
+  padding: 0 24px 20px;
+  line-height: 1.2;
+}
+.case-footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 24px;
+  border-top: 1px solid var(--border-subtle);
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+.case-tech { display: flex; flex-wrap: wrap; gap: 6px; }
+.case-link {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--accent-primary);
+  white-space: nowrap;
+  transition: gap 200ms;
+  flex-shrink: 0;
+}
+
+/* Wide case card body */
+.case-card--wide .case-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* ── TESTIMONIALS ────────────────────────── */
+.testi-carousel {
+  position: relative;
+  overflow: hidden;
+}
+.testi-track {
+  display: flex;
+  gap: 24px;
+  transition: transform 400ms var(--ease-out);
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+.testi-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 40px 36px;
+  box-shadow: var(--shadow-card), inset 0 1px 0 rgba(255,255,255,0.06);
+  position: relative;
+  overflow: hidden;
+  flex: 0 0 calc((100% - 48px) / 3);
+  scroll-snap-align: start;
+  transition: all 300ms ease;
+}
+.testi-card:hover {
+  background: var(--glass-bg-hover);
+  border-color: var(--glass-border-hover);
+}
+.testi-quote-mark {
+  position: absolute;
+  top: 16px; right: 24px;
+  font-family: var(--font-display);
+  font-size: 120px;
+  font-weight: 700;
+  color: var(--accent-primary);
+  opacity: 0.06;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+.testi-text {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-style: normal;
+  margin-bottom: 28px;
+  position: relative;
+  z-index: 1;
+}
+.testi-text strong { color: var(--text-primary); font-weight: 600; }
+.testi-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.testi-avatar {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.testi-name {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.testi-role {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.testi-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 28px;
+}
+.testi-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: var(--glass-border-hover);
+  cursor: pointer;
+  transition: background 200ms, width 200ms;
+  padding: 0;
+}
+.testi-dot.active {
+  background: var(--accent-primary);
+  width: 24px;
+  border-radius: 4px;
+}
+.testi-arrows {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+.testi-arrow {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 50%;
+  width: 40px; height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: all 200ms;
+}
+.testi-arrow:hover {
+  background: var(--glass-bg-hover);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+/* ── ABOUT ───────────────────────────────── */
+.about-grid {
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  gap: clamp(40px, 6vw, 80px);
+  align-items: start;
+}
+.about-narrative {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.about-narrative p {
+  font-size: var(--text-body-lg);
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+.inline-link {
+  color: var(--accent-primary);
+  border-bottom: 1px solid rgba(79,195,247,0.3);
+  transition: border-color 200ms;
+}
+.inline-link:hover { border-color: var(--accent-primary); }
+
+/* Bento grid */
+.bento-grid {
+  display: grid;
+  grid-template-areas:
+    "featured featured"
+    "wlc      langs"
+    "certs    speaker"
+    "avail    avail";
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.bento-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: var(--shadow-card), inset 0 1px 0 rgba(255,255,255,0.05);
+  transition: all 300ms ease;
+  opacity: 0;
+  transform: translateY(20px);
+}
+.bento-card.in-view {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 500ms var(--ease-out), transform 500ms var(--ease-out),
+              background 300ms ease, border-color 300ms ease, box-shadow 300ms ease;
+}
+.bento-card:hover {
+  background: var(--glass-bg-hover);
+  border-color: var(--glass-border-hover);
+  transform: scale(1.02);
+}
+.bento-card.in-view:hover { transform: scale(1.02); }
+.bento-featured {
+  grid-area: featured;
+  border-top: 2px solid var(--accent-primary);
+}
+.bento-available {
+  grid-area: avail;
+  background: rgba(76,175,80,0.06);
+  border-color: rgba(76,175,80,0.2);
+}
+.bento-available:hover { border-color: rgba(76,175,80,0.4); }
+.bento-grid > .bento-card:nth-child(2) { grid-area: wlc; }
+.bento-grid > .bento-card:nth-child(3) { grid-area: langs; }
+.bento-grid > .bento-card:nth-child(4) { grid-area: certs; }
+.bento-grid > .bento-card:nth-child(5) { grid-area: speaker; }
+
+.bento-icon {
+  font-size: 24px;
+  margin-bottom: 10px;
+  display: block;
+}
+.bento-title {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+  letter-spacing: var(--tracking-normal);
+}
+.bento-detail {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Trilingual flag strip */
+.bento-trilingual { position: relative; padding-top: 16px; overflow: hidden; }
+.bento-flag-strip {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  display: flex;
+  border-radius: 12px 12px 0 0;
+  overflow: hidden;
+}
+.bento-flag-strip span { flex: 1; }
+
+/* Bento available */
+.bento-available-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.bento-available-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* ── CONTACT ─────────────────────────────── */
+.contact { position: relative; overflow: hidden; }
+.contact-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 600px 400px at 50% 50%, rgba(79,195,247,0.05) 0%, transparent 70%),
+    radial-gradient(ellipse 100% 100% at 50% 100%, rgba(8,11,18,0.8) 0%, transparent 60%);
+  pointer-events: none;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 6vw, 80px);
+  align-items: start;
+}
+.btn-book-big {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  height: 56px;
+  background: var(--glass-bg);
+  border: 1px solid var(--accent-primary);
+  border-radius: 12px;
+  color: var(--accent-primary);
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: var(--tracking-normal);
+  transition: background 300ms, box-shadow 300ms, transform 200ms;
+  margin-bottom: 20px;
+}
+.btn-book-big:hover {
+  background: var(--accent-glow);
+  box-shadow: 0 0 40px var(--accent-glow-strong);
+  transform: translateY(-2px);
+}
+.contact-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+.contact-avail {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.contact-link-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  color: var(--text-secondary);
+  padding: 14px 16px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  transition: all 200ms;
+}
+.contact-link-item:hover {
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+  background: var(--accent-glow);
+}
+
+/* Form */
+.contact-form { display: flex; flex-direction: column; gap: 12px; }
+.form-field { display: flex; flex-direction: column; }
+.form-field input,
+.form-field textarea {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--text-primary);
+  transition: border-color 200ms, background 200ms;
+  resize: vertical;
+}
+.form-field input::placeholder,
+.form-field textarea::placeholder { color: var(--text-muted); }
+.form-field input:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  background: rgba(79,195,247,0.04);
+}
+.btn-form-submit {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 200ms;
+  align-self: flex-start;
+}
+.btn-form-submit:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  background: var(--accent-glow);
+}
+.form-success {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  color: var(--success);
+  padding: 12px 0;
+}
+.form-success.show { display: flex; }
+
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  background: var(--bg-elevated);
+  border: 1px solid var(--glass-border);
+  border-radius: 100px;
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--success);
+  opacity: 0;
+  transition: transform 300ms var(--ease-out), opacity 300ms;
+  pointer-events: none;
+  z-index: 9000;
+  white-space: nowrap;
+}
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ── FOOTER ──────────────────────────────── */
+.footer {
+  border-top: 1px solid var(--border-subtle);
+  padding: 32px 0 24px;
+}
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.footer-copy {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+.footer-nav {
+  display: flex;
+  gap: 28px;
+}
+.footer-link {
+  font-size: 14px;
+  color: var(--text-muted);
+  transition: color 200ms;
+}
+.footer-link:hover { color: var(--text-primary); }
+.footer-social { display: flex; gap: 12px; }
+.footer-icon {
+  color: var(--text-muted);
+  transition: color 200ms;
+  display: flex;
+  align-items: center;
+}
+.footer-icon:hover { color: var(--accent-primary); }
+.footer-built {
+  text-align: center;
+  font-size: 11px;
+  color: var(--text-muted);
+  padding: 0 clamp(20px, 5vw, 60px);
+}
+
+/* ── CUSTOM CURSOR ───────────────────────── */
+@media (pointer: fine) {
+  body { cursor: none; }
+  a, button, [role="button"] { cursor: none; }
+  .cursor-dot {
+    position: fixed;
+    top: 0; left: 0;
+    width: 8px; height: 8px;
+    background: var(--accent-primary);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 100ms, width 200ms, height 200ms, opacity 200ms;
+    will-change: transform;
+  }
+  .cursor-ring {
+    position: fixed;
+    top: 0; left: 0;
+    width: 36px; height: 36px;
+    border: 1px solid rgba(79,195,247,0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: transform 100ms linear, width 200ms, height 200ms, opacity 200ms,
+                border-color 200ms;
+    will-change: transform;
+  }
+  .cursor-dot.hover { width: 12px; height: 12px; background: var(--accent-primary); }
+  .cursor-ring.hover {
+    width: 48px; height: 48px;
+    border-color: var(--accent-primary);
+    background: rgba(79,195,247,0.05);
+  }
+}
+@media (pointer: coarse) {
+  .cursor-dot, .cursor-ring { display: none; }
+  body { cursor: auto; }
+}
+
+/* ── SZKOLENIA AI ────────────────────────── */
+.training-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+  margin-top: 56px;
+}
+
+.training-photo-wrap {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-card);
+  aspect-ratio: 4/3;
+}
+
+.training-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* Placeholder shown only when image fails/missing */
+.training-photo-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: var(--glass-bg);
+}
+.training-photo-placeholder span {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 0 24px;
+}
+.training-photo + .training-photo-placeholder { display: none; }
+
+.training-badges {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Training info column */
+.training-info { display: flex; flex-direction: column; gap: 0; }
+
+.training-points { display: flex; flex-direction: column; gap: 24px; margin-bottom: 36px; }
+
+.training-point {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.training-point-icon {
+  font-size: 24px;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.training-point-title {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 6px 0;
+}
+
+.training-point-desc {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.training-cta { margin-top: 4px; align-self: flex-start; }
+
+/* Course testimonials grid */
+.training-testi-wrap { margin-top: 72px; }
+
+.training-testi-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+  letter-spacing: var(--tracking-wide);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+
+.training-testi-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.training-testi-card {
+  position: relative;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), var(--shadow-card);
+  border-radius: 16px;
+  padding: 28px 28px 24px;
+  transition: all 300ms ease;
+  overflow: hidden;
+}
+
+.training-testi-card:hover {
+  background: var(--glass-bg-hover);
+  border-color: var(--glass-border-hover);
+  transform: translateY(-3px);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.10), var(--shadow-card-hover);
+}
+
+/* ── SCROLL REVEAL ───────────────────────── */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 700ms var(--ease-out), transform 700ms var(--ease-out);
+}
+.reveal-item.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animate-fade-up (used with --delay CSS var) */
+.animate-fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: fadeUp 700ms var(--ease-out) forwards;
+  animation-delay: var(--delay, 0ms);
+}
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── RESPONSIVE ──────────────────────────── */
+@media (max-width: 1024px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .services-grid { grid-template-columns: 1fr; }
+  .process-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+  .process-grid::before { display: none; }
+  .about-grid { grid-template-columns: 1fr; }
+  .bento-grid { grid-template-areas: none; grid-template-columns: 1fr 1fr; }
+  .bento-featured, .bento-available { grid-column: 1 / -1; }
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .btn-book { display: none; }
+  .hamburger { display: flex; }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    padding-top: 20px;
+    padding-bottom: 60px;
+  }
+  .hero-visual-wrap {
+    order: -1;
+    margin-bottom: 8px;
+  }
+  .hero-card { max-width: 280px; }
+  .hero-ghost-text { display: none; }
+  .hero-badge { right: 0; }
+
+  .testi-card { flex: 0 0 85vw; }
+  .testi-track { overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 12px; }
+
+  .cases-grid { grid-template-columns: 1fr; }
+  .case-card--wide { flex-direction: column; }
+  .case-card--wide .case-header { width: 100%; height: 140px; min-height: auto; }
+
+  .contact-grid { grid-template-columns: 1fr; }
+  .training-grid { grid-template-columns: 1fr; gap: 32px; }
+  .training-testi-grid { grid-template-columns: 1fr; }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .footer-nav { flex-wrap: wrap; gap: 16px; }
+
+  .process-grid { grid-template-columns: 1fr; gap: 32px; }
+}
+
+@media (max-width: 480px) {
+  .bento-grid { grid-template-columns: 1fr; }
+  .bento-featured, .bento-available { grid-column: auto; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .hero-cta { flex-direction: column; align-items: flex-start; }
+}
+
+/* ── REDUCED MOTION ──────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .word { opacity: 1 !important; transform: none !important; }
+  .animate-fade-up { opacity: 1 !important; transform: none !important; }
+  .reveal-item { opacity: 1 !important; transform: none !important; }
+  .brand-track { animation: none; }
+}
+
+</style>
+
+  <!-- Schema JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Marcin Białecki",
+    "jobTitle": "IT Project Manager & Konsultant AI",
+    "description": "Starszy IT PM w Bouvet przy projektach Bane NOR, CEO WLC NORGE AS (agencja WordPress/WooCommerce) i trener Generative AI dla polskich przedsiębiorców w Norwegii.",
+    "url": "https://marcinbialecki.no",
+    "image": "https://marcinbialecki.no/assets/images/marcin-profile.jpg",
+    "email": "marcin@betterweb.no",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Drammen",
+      "addressRegion": "Buskerud",
+      "addressCountry": "NO"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://marcinbialecki.no"
+    },
+    "worksFor": [
+      {
+        "@type": "Organization",
+        "name": "Bouvet ASA",
+        "url": "https://www.bouvet.no"
+      },
+      {
+        "@type": "Organization",
+        "name": "WLC NORGE AS",
+        "url": "https://whitelabelcoders.co.no/"
+      }
+    ],
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Uniwersytet Ekonomiczny w Poznaniu"
+    },
+    "hasCredential": [
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "PRINCE2 Foundation",
+        "credentialCategory": "Zarządzanie projektami"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Professional Scrum Master I (PSM I)",
+        "credentialCategory": "Agile"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "PROSCI Change Manager",
+        "credentialCategory": "Zarządzanie zmianą"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Microsoft Azure AZ-900",
+        "credentialCategory": "Chmura"
+      }
+    ],
+    "knowsAbout": [
+      "Zarządzanie projektami IT",
+      "WordPress Development",
+      "WooCommerce",
+      "Generative AI",
+      "Agenty AI",
+      "PRINCE2",
+      "Scrum",
+      "Rynek norweski",
+      "Body-leasing",
+      "React",
+      "PHP Laravel"
+    ],
+    "knowsLanguage": ["Polski", "Norweski", "Angielski"],
+    "sameAs": [
+      "https://www.linkedin.com/in/marcin-bialecki1989/"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Pomiń do treści -->
+  <a href="#main" class="skip-link">Przejdź do treści</a>
+
+  <!-- ═══════════════════════════════════════
+       NAWIGACJA
+  ═══════════════════════════════════════ -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Nawigacja główna">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" aria-label="Marcin Białecki — strona główna">M.</a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#about" class="nav-link">O mnie</a></li>
+        <li><a href="#services" class="nav-link">Usługi</a></li>
+        <li><a href="#work" class="nav-link">Realizacje</a></li>
+        <li><a href="#contact" class="nav-link">Kontakt</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Przełącz tryb jasny/ciemny">
+          <!-- Ikona słońca -->
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+            <line x1="12" y1="2" x2="12" y2="4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="12" y1="20" x2="12" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="2" y1="12" x2="4" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="20" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <!-- Ikona księżyca -->
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <a href="https://calendly.com/marcin-betterweb/30min" class="btn-book" target="_blank" rel="noopener noreferrer">Umów rozmowę</a>
+        <button class="hamburger" id="hamburger" aria-label="Otwórz menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Menu mobilne -->
+  <div class="mobile-overlay" id="mobileOverlay" aria-hidden="true" role="dialog" aria-label="Menu mobilne">
+    <button class="overlay-close" id="overlayClose" aria-label="Zamknij menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <line x1="18" y1="6" x2="6" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <nav class="overlay-nav">
+      <a href="#about" class="overlay-link" data-delay="0">O mnie</a>
+      <a href="#services" class="overlay-link" data-delay="60">Usługi</a>
+      <a href="#work" class="overlay-link" data-delay="120">Realizacje</a>
+      <a href="#contact" class="overlay-link" data-delay="180">Kontakt</a>
+    </nav>
+    <div class="overlay-cta">
+      <p class="overlay-cta-label">Gotowy porozmawiać?</p>
+      <a href="https://calendly.com/marcin-betterweb/30min" class="btn-book overlay-book" target="_blank" rel="noopener noreferrer">Umów rozmowę</a>
+    </div>
+    <div class="overlay-footer">🟢 Dostępny · PL / NO / EN</div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       TREŚĆ GŁÓWNA
+  ═══════════════════════════════════════ -->
+  <main id="main">
+
+    <!-- ── HERO ──────────────────────────── -->
+    <section class="hero section" aria-label="Hero">
+      <div class="container hero-grid">
+
+        <!-- Lewa kolumna -->
+        <div class="hero-text">
+          <p class="eyebrow hero-eyebrow animate-fade-up" style="--delay:0ms">
+            IT PROJECT MANAGER &nbsp;·&nbsp; KONSULTANT AI &nbsp;·&nbsp; NORWEGIA
+          </p>
+
+          <h1 class="hero-headline">
+            <span class="word-line"><span class="word" style="--word-index:0">Gdzie</span> <span class="word" style="--word-index:1">norweskie</span></span>
+            <span class="word-line"><span class="word" style="--word-index:2">ambicje</span> <span class="word" style="--word-index:3">spotykają</span></span>
+            <span class="word-line"><span class="word" style="--word-index:4">polską</span> <span class="word" style="--word-index:5">precyzję.</span></span>
+          </h1>
+
+          <p class="hero-sub animate-fade-up" style="--delay:900ms">
+            IT Project Manager w Bouvet (projekty Bane NOR) · CEO WLC NORGE · twórca narzędzi AI dla firm. Od niemal dziesięciu lat pomagam firmom realizować cele technologiczne na norweskim rynku — jako konsultant, PM i team leader w jednym.
+          </p>
+
+          <div class="hero-cta animate-fade-up" style="--delay:1100ms">
+            <a href="https://calendly.com/marcin-betterweb/30min" class="btn-primary" target="_blank" rel="noopener noreferrer">Umów bezpłatną rozmowę</a>
+            <a href="#work" class="btn-ghost">Zobacz realizacje ↓</a>
+          </div>
+
+          <div class="hero-proof animate-fade-up" style="--delay:1300ms">
+            <span><span class="proof-num">10+</span> lat</span>
+            <span class="proof-sep">·</span>
+            <span><span class="proof-num">50+</span> projektów</span>
+            <span class="proof-sep">·</span>
+            <span><span class="proof-num">3</span> rynki</span>
+            <span class="proof-sep">·</span>
+            <span class="proof-available"><span class="pulse-dot"></span> Dostępny</span>
+          </div>
+        </div>
+
+        <!-- Prawa kolumna -->
+        <div class="hero-visual-wrap animate-fade-up" style="--delay:400ms">
+          <div class="hero-ghost-text" aria-hidden="true">PM · AI · WLC</div>
+          <div class="hero-card" id="heroCard">
+            <div class="hero-photo-wrap">
+              <img
+                src="assets/images/marcin-profile.jpg"
+                alt="Marcin Białecki — IT Project Manager i konsultant AI w Norwegii"
+                class="hero-photo"
+                width="480"
+                height="640"
+                loading="eager"
+              >
+              <div class="hero-photo-placeholder" aria-hidden="true">
+                <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+                  <circle cx="60" cy="45" r="28" fill="rgba(79,195,247,0.15)" stroke="rgba(79,195,247,0.3)" stroke-width="1.5"/>
+                  <path d="M10 110 Q10 80 60 80 Q110 80 110 110" fill="rgba(79,195,247,0.12)" stroke="rgba(79,195,247,0.25)" stroke-width="1.5"/>
+                </svg>
+                <span>Zdjęcie wkrótce</span>
+              </div>
+            </div>
+            <div class="hero-card-info">
+              <span class="hero-card-name">Marcin</span>
+              <span class="hero-card-title">IT PM · Trener AI · CEO WLC NORGE</span>
+              <span class="hero-card-loc">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="currentColor"/></svg>
+                Drammen, Norwegia
+              </span>
+            </div>
+          </div>
+          <div class="hero-badge">
+            <span class="pulse-dot green"></span>
+            Otwarty na projekty
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PASEK MAREK ──────────────────── -->
+    <section class="brand-bar" aria-label="Zaufali mi i współpracowałem z">
+      <div class="container">
+        <p class="brand-label">Zaufali mi i współpracowałem z</p>
+        <div class="brand-track-wrap">
+          <div class="brand-track" aria-hidden="true">
+            <div class="brand-item">BOUVET</div>
+            <div class="brand-item">BANE NOR</div>
+            <div class="brand-item">SOPRA STERIA</div>
+            <div class="brand-item">BDO</div>
+            <div class="brand-item">GLITRE ENERGI</div>
+            <div class="brand-item">DRAMMEN KOMMUNE</div>
+            <div class="brand-item">WHITE LABEL CODERS</div>
+            <div class="brand-item">DRAMMEN TEKNOLOGIFORUM</div>
+            <div class="brand-item">RAMIRENT</div>
+            <div class="brand-item">MESTER GRØNN</div>
+            <!-- Duplikat dla płynnej pętli -->
+            <div class="brand-item">BOUVET</div>
+            <div class="brand-item">BANE NOR</div>
+            <div class="brand-item">SOPRA STERIA</div>
+            <div class="brand-item">BDO</div>
+            <div class="brand-item">GLITRE ENERGI</div>
+            <div class="brand-item">DRAMMEN KOMMUNE</div>
+            <div class="brand-item">WHITE LABEL CODERS</div>
+            <div class="brand-item">DRAMMEN TEKNOLOGIFORUM</div>
+            <div class="brand-item">RAMIRENT</div>
+            <div class="brand-item">MESTER GRØNN</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── STATYSTYKI ─────────────────── -->
+    <section class="stats section reveal-section" aria-label="Statystyki">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-card reveal-item" data-delay="0">
+            <span class="stat-num" data-target="10" data-suffix="+">0+</span>
+            <span class="stat-label">lat doświadczenia w IT</span>
+          </div>
+          <div class="stat-card reveal-item" data-delay="100">
+            <span class="stat-num" data-target="30" data-suffix="M NOK">0M NOK</span>
+            <span class="stat-label">roczny budżet projektu Bane NOR</span>
+          </div>
+          <div class="stat-card reveal-item" data-delay="200">
+            <span class="stat-num" data-target="3" data-suffix="">0</span>
+            <span class="stat-label">języki komunikacji</span>
+          </div>
+          <div class="stat-card reveal-item" data-delay="300">
+            <span class="stat-num" data-target="200" data-suffix="+">0+</span>
+            <span class="stat-label">uczestników warsztatów AI</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── USŁUGI ─────────────────────── -->
+    <section class="services section reveal-section" id="services" aria-label="Usługi">
+      <div class="container">
+        <p class="eyebrow reveal-item" data-delay="0">CO ROBIĘ</p>
+        <h2 class="section-headline reveal-item" data-delay="80">Trzy sposoby na współpracę.</h2>
+        <p class="section-sub reveal-item" data-delay="160">Czy potrzebujesz partnera deweloperskiego, lidera projektowego, czy zespołu gotowego na AI — jestem do dyspozycji.</p>
+
+        <div class="services-grid">
+
+          <!-- Karta 1 -->
+          <div class="service-card reveal-item" data-delay="0">
+            <div class="service-icon">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+                <rect x="4" y="12" width="32" height="22" rx="3" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M14 20l-4 4 4 4M26 20l4 4-4 4M18 26l4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8 12V9a3 3 0 013-3h18a3 3 0 013 3v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="service-title">Rozwój WordPress &amp; WooCommerce</h3>
+            <p class="service-desc">Starsi polscy deweloperzy zintegrowani z Twoim norweskim zespołem — lub w pełni zarządzany projekt. React, Vue, PHP, Laravel, .NET. Budujemy dokładnie to, czego wymaga brief, z europejską jakością i efektywną kosztowo realizacją.</p>
+            <div class="service-tags">
+              <span class="tag">Body-leasing</span>
+              <span class="tag">WooCommerce</span>
+              <span class="tag">React/Vue</span>
+              <span class="tag">Laravel</span>
+              <span class="tag">Headless WP</span>
+            </div>
+            <a href="#contact" class="service-cta">Porozmawiaj z WLC NORGE →</a>
+          </div>
+
+          <!-- Karta 2 -->
+          <div class="service-card reveal-item" data-delay="100">
+            <div class="service-icon">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+                <rect x="4" y="6" width="32" height="28" rx="3" stroke="currentColor" stroke-width="1.8"/>
+                <line x1="4" y1="14" x2="36" y2="14" stroke="currentColor" stroke-width="1.8"/>
+                <rect x="8" y="19" width="7" height="5" rx="1" fill="currentColor" opacity="0.4"/>
+                <rect x="19" y="19" width="7" height="5" rx="1" fill="currentColor" opacity="0.4"/>
+                <rect x="8" y="27" width="7" height="3" rx="1" fill="currentColor" opacity="0.25"/>
+                <rect x="19" y="27" width="13" height="3" rx="1" fill="currentColor" opacity="0.25"/>
+              </svg>
+            </div>
+            <h3 class="service-title">Zarządzanie projektami IT i liderstwo zespołu</h3>
+            <p class="service-desc">Certyfikowany PM PRINCE2 z doświadczeniem w zarządzaniu złożonymi projektami dla Bane NOR — norweskiej infrastruktury krytycznej. Ten sam poziom rygoru stosuję do Twojego cyfrowego projektu.</p>
+            <div class="service-tags">
+              <span class="tag">PRINCE2</span>
+              <span class="tag">PSM I</span>
+              <span class="tag">Agile</span>
+              <span class="tag">Zdalne zespoły</span>
+              <span class="tag">Bane NOR-grade</span>
+            </div>
+            <a href="#contact" class="service-cta">Umów konsultację PM →</a>
+          </div>
+
+          <!-- Karta 3 -->
+          <div class="service-card reveal-item" data-delay="200">
+            <div class="service-icon">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+                <circle cx="20" cy="20" r="6" stroke="currentColor" stroke-width="1.8"/>
+                <circle cx="8" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="32" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="8" cy="28" r="3" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="32" cy="28" r="3" stroke="currentColor" stroke-width="1.5"/>
+                <line x1="14" y1="17" x2="11" y2="14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="26" y1="17" x2="29" y2="14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="14" y1="23" x2="11" y2="26" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="26" y1="23" x2="29" y2="26" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="service-title">Szkolenia i wdrożenia Generative AI</h3>
+            <p class="service-desc">Praktyczne warsztaty AI dla zespołów i przedsiębiorców — nie teoria, ale narzędzia, z których korzystasz już w poniedziałek. Pracuję z GenAI na co dzień: projektuję wewnętrzne narzędzie AI dla Bouvet wspierające przygotowywanie ofert. Od prompt engineeringu przez automatyzację n8n po agenty AI. Ponad 200 uczestników przeszkolonych w Norwegii.</p>
+            <div class="service-tags">
+              <span class="tag">Warsztaty GenAI</span>
+              <span class="tag">Agenty AI</span>
+              <span class="tag">Prompt Engineering</span>
+              <span class="tag">n8n</span>
+              <span class="tag">ChatGPT/Claude</span>
+            </div>
+            <a href="#contact" class="service-cta">Sprawdź szkolenia AI →</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PROCES ─────────────────────── -->
+    <section class="process section reveal-section" aria-label="Jak pracuję">
+      <div class="container">
+        <p class="eyebrow reveal-item" data-delay="0">PROCES</p>
+        <h2 class="section-headline reveal-item" data-delay="80">Prosto. Strukturalnie. Bez niespodzianek.</h2>
+
+        <div class="process-grid">
+
+          <div class="process-step reveal-item" data-delay="0">
+            <span class="process-ghost" aria-hidden="true">01</span>
+            <div class="process-content">
+              <h3 class="process-title">Rozmowa odkrywcza <span class="process-badge">30 min</span></h3>
+              <p class="process-desc">Bezpłatna rozmowa, podczas której słucham więcej niż mówię. Mapuję Twój kontekst, Ty testujesz moje myślenie. Bez pitchowania. Bez oferty zanim nie zrozumiem Twojej sytuacji.</p>
+            </div>
+          </div>
+
+          <div class="process-step reveal-item" data-delay="100">
+            <span class="process-ghost" aria-hidden="true">02</span>
+            <div class="process-content">
+              <h3 class="process-title">Oferta w 48h</h3>
+              <p class="process-desc">Otrzymujesz: jasny zakres, realistyczny harmonogram, przejrzystą wycenę. Realizowałem projekty dla Bane NOR — wiem, jak wygląda prawdziwy plan.</p>
+            </div>
+          </div>
+
+          <div class="process-step reveal-item" data-delay="200">
+            <span class="process-ghost" aria-hidden="true">03</span>
+            <div class="process-content">
+              <h3 class="process-title">Realizacja <span class="process-badge">rytm tygodniowy</span></h3>
+              <p class="process-desc">Komunikacja async-first, cotygodniowe aktualizacje, zero scope-creep z zaskoczenia. Twój zespół jest na bieżąco — bez zasypywania spotkaniami.</p>
+            </div>
+          </div>
+
+          <div class="process-step reveal-item" data-delay="300">
+            <span class="process-ghost" aria-hidden="true">04</span>
+            <div class="process-content">
+              <h3 class="process-title">Wyniki i przekazanie</h3>
+              <p class="process-desc">Mierzalne rezultaty, pełna dokumentacja, okno wsparcia po dostarczeniu. Wszystko należy do Ciebie — kod, zasoby, wiedza.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── REALIZACJE ─────────────────── -->
+    <section class="work section reveal-section" id="work" aria-label="Wybrane realizacje">
+      <div class="container">
+        <p class="eyebrow reveal-item" data-delay="0">WYBRANE REALIZACJE</p>
+        <h2 class="section-headline reveal-item" data-delay="80">Wyniki, z których jestem dumny.</h2>
+        <p class="section-sub reveal-item" data-delay="160">Prawdziwe projekty. Prawdziwe liczby. Prawdziwi klienci.</p>
+
+        <div class="cases-grid cases-grid--two">
+
+          <!-- Kafelek 1: Bane NOR -->
+          <article class="case-card reveal-item" data-delay="0">
+            <div class="case-header case-header--infra">
+              <div class="case-header-inner">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M6 38h36M10 38V20l14-12 14 12v18" stroke="rgba(79,195,247,0.6)" stroke-width="2" stroke-linecap="round"/><rect x="19" y="28" width="10" height="10" rx="1" stroke="rgba(79,195,247,0.6)" stroke-width="1.5"/><line x1="14" y1="26" x2="14" y2="32" stroke="rgba(79,195,247,0.4)" stroke-width="1.5" stroke-linecap="round"/><line x1="34" y1="26" x2="34" y2="32" stroke="rgba(79,195,247,0.4)" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+            </div>
+            <div class="case-tags">
+              <span class="tag tag-sm">Infrastruktura krytyczna</span>
+              <span class="tag tag-sm">IT Project Management</span>
+            </div>
+            <p class="case-challenge"><em>Bane NOR potrzebował stabilnego lidera do wieloletniego projektu budowy krytycznego systemu IT zarządzającego ruchem pociągów w całej Norwegii.</em></p>
+            <p class="case-solution">Przez ponad 3 lata (2022–2025) prowadziłem zespół odpowiedzialny za rozwój i utrzymanie systemu — od fazy planowania przez delivery. Budżet projektu wzrósł dwukrotnie w ciągu tych trzech lat, odzwierciedlając rosnący zakres i zaufanie klienta.</p>
+            <div class="case-result">2× wzrost budżetu · ~30M NOK/rok · 3 lata delivery</div>
+            <div class="case-footer">
+              <div class="case-tech">
+                <span class="tag tag-sm">PRINCE2</span>
+                <span class="tag tag-sm">Agile</span>
+                <span class="tag tag-sm">Jira</span>
+                <span class="tag tag-sm">Confluence</span>
+                <span class="tag tag-sm">Bouvet</span>
+              </div>
+              <a href="#contact" class="case-link">Porozmawiaj o projekcie →</a>
+            </div>
+          </article>
+
+          <!-- Kafelek 2: GenAI Warsztaty -->
+          <article class="case-card reveal-item" data-delay="100">
+            <div class="case-header case-header--ai">
+              <div class="case-header-inner">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="24" r="8" stroke="rgba(79,195,247,0.6)" stroke-width="2"/><circle cx="10" cy="16" r="4" stroke="rgba(79,195,247,0.4)" stroke-width="1.5"/><circle cx="38" cy="16" r="4" stroke="rgba(79,195,247,0.4)" stroke-width="1.5"/><circle cx="10" cy="32" r="4" stroke="rgba(79,195,247,0.4)" stroke-width="1.5"/><circle cx="38" cy="32" r="4" stroke="rgba(79,195,247,0.4)" stroke-width="1.5"/><line x1="17" y1="21" x2="14" y2="18" stroke="rgba(79,195,247,0.3)" stroke-width="1.5" stroke-linecap="round"/><line x1="31" y1="21" x2="34" y2="18" stroke="rgba(79,195,247,0.3)" stroke-width="1.5" stroke-linecap="round"/><line x1="17" y1="27" x2="14" y2="30" stroke="rgba(79,195,247,0.3)" stroke-width="1.5" stroke-linecap="round"/><line x1="31" y1="27" x2="34" y2="30" stroke="rgba(79,195,247,0.3)" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+            </div>
+            <div class="case-tags">
+              <span class="tag tag-sm">Szkolenia GenAI</span>
+              <span class="tag tag-sm">Rynek norweski</span>
+            </div>
+            <p class="case-challenge"><em>Polscy przedsiębiorcy, programiści, designerzy i specjaliści IT działający w Norwegii potrzebowali praktycznej wiedzy o AI — nie teorii, ale narzędzi do użycia od zaraz.</em></p>
+            <p class="case-solution">Seria warsztatów GenAI w Biznesie: prompt engineering, automatyzacja (n8n, Make), agenty AI i systemy RAG — prowadzona po polsku, w norweskim kontekście biznesowym.</p>
+            <div class="case-result">200+ przeszkolonych uczestników</div>
+            <div class="case-footer">
+              <div class="case-tech">
+                <span class="tag tag-sm">ChatGPT</span>
+                <span class="tag tag-sm">Claude</span>
+                <span class="tag tag-sm">n8n</span>
+                <span class="tag tag-sm">Make</span>
+                <span class="tag tag-sm">Systemy RAG</span>
+              </div>
+              <a href="#training" class="case-link">Zobacz opinie uczestników →</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── OPINIE KLIENTÓW ───────────────── -->
+    <section class="testimonials section reveal-section" aria-label="Opinie klientów">
+      <div class="container">
+        <p class="eyebrow reveal-item" data-delay="0">OPINIE KLIENTÓW</p>
+        <h2 class="section-headline reveal-item" data-delay="80">Nie wierz mi na słowo.</h2>
+        <p class="section-sub reveal-item" data-delay="160">Co mówią firmy i managerowie, z którymi współpracowałem w Norwegii.</p>
+
+        <div class="testi-carousel">
+          <div class="testi-track" id="testiTrack">
+
+            <!-- Opinia 1: IT PM / leadership — Kenneth Koppervik -->
+            <div class="testi-card reveal-item" data-delay="0">
+              <span class="testi-quote-mark" aria-hidden="true">"</span>
+              <blockquote class="testi-text">
+                Jeg har hatt gleden av å jobbe med Marcin og kan på det sterkeste anbefale ham. Han er målrettet person med en imponerende teknologisk kompetanse. Marcin har <strong>en unik evne til å se det store bildet samtidig som han effektivt styrer komplekse prosesser.</strong> Han er spesielt dyktig til å finne innovative måter å utnytte ny teknologi på, alltid med fokus på å levere optimale løsninger.
+              </blockquote>
+              <div class="testi-author">
+                <div class="testi-avatar" aria-hidden="true">
+                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="rgba(79,195,247,0.12)"/><circle cx="24" cy="19" r="8" fill="rgba(79,195,247,0.3)"/><path d="M4 44 Q4 34 24 34 Q44 34 44 44" fill="rgba(79,195,247,0.25)"/></svg>
+                </div>
+                <div>
+                  <p class="testi-name">Kenneth C. Koppervik 🇳🇴</p>
+                  <p class="testi-role">Daglig Leder, Hubro Digital AS</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Opinia 2: WLC / WordPress — Thomas Nyheim -->
+            <div class="testi-card reveal-item" data-delay="0">
+              <span class="testi-quote-mark" aria-hidden="true">"</span>
+              <blockquote class="testi-text">
+                Marcin and WLC delivered great work. <strong>The team delivered tasks on time and budget,</strong> showcasing their adaptability. They were also highly responsive to questions, resulting in a smooth engagement with the client. Overall, the partnership was highly successful.
+              </blockquote>
+              <div class="testi-author">
+                <div class="testi-avatar" aria-hidden="true">
+                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="rgba(121,134,203,0.12)"/><circle cx="24" cy="19" r="8" fill="rgba(121,134,203,0.3)"/><path d="M4 44 Q4 34 24 34 Q44 34 44 44" fill="rgba(121,134,203,0.25)"/></svg>
+                </div>
+                <div>
+                  <p class="testi-name">Thomas W. Nyheim 🇳🇴</p>
+                  <p class="testi-role">Head of Web Development, NYG AS</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Opinia 3: projekt IT — Garda Sikring -->
+            <div class="testi-card reveal-item" data-delay="0">
+              <span class="testi-quote-mark" aria-hidden="true">"</span>
+              <blockquote class="testi-text">
+                Marcin leverte sammen med sitt team Gjerdekalkulator-løsningen med <strong>eksepsjonell kvalitet og imponerende tempo.</strong> Hans fokus på kvalitet var tydelig i alle deler av prosjektet. Dialogen og oppfølgingen fra Marcin var fremragende, noe som sikret god kommunikasjon og en smidig samarbeid gjennom hele prosessen.
+              </blockquote>
+              <div class="testi-author">
+                <div class="testi-avatar" aria-hidden="true">
+                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="rgba(79,195,247,0.12)"/><circle cx="24" cy="19" r="8" fill="rgba(79,195,247,0.3)"/><path d="M4 44 Q4 34 24 34 Q44 34 44 44" fill="rgba(79,195,247,0.25)"/></svg>
+                </div>
+                <div>
+                  <p class="testi-name">Gunn K. Vestgård 🇳🇴</p>
+                  <p class="testi-role">Markedsansvarlig, Garda Sikring AS</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Opinia 4: IT PM — Slawomir Lech -->
+            <div class="testi-card reveal-item" data-delay="0">
+              <span class="testi-quote-mark" aria-hidden="true">"</span>
+              <blockquote class="testi-text">
+                I had the pleasure of working with Marcin at Godt Sagt, where he served as my Project Manager. <strong>Marcin demonstrated excellent leadership skills and a remarkable ability to understand and manage the technical aspects of each project.</strong> A true professional who bridges business vision with technical execution.
+              </blockquote>
+              <div class="testi-author">
+                <div class="testi-avatar" aria-hidden="true">
+                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="rgba(121,134,203,0.12)"/><circle cx="24" cy="19" r="8" fill="rgba(121,134,203,0.3)"/><path d="M4 44 Q4 34 24 34 Q44 34 44 44" fill="rgba(121,134,203,0.25)"/></svg>
+                </div>
+                <div>
+                  <p class="testi-name">Sławomir Lech 🇵🇱</p>
+                  <p class="testi-role">CTO, Automa.net</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Opinia 5: wieloletnia współpraca IT — Jolanta Øen -->
+            <div class="testi-card reveal-item" data-delay="0">
+              <span class="testi-quote-mark" aria-hidden="true">"</span>
+              <blockquote class="testi-text">
+                Marcin przez wiele lat wspierał nas w projektach IT dla Jobselect, w tym w budowie stron i konfiguracji różnych systemów IT. <strong>Zawsze wykazywał się profesjonalizmem, zaangażowaniem i wysoką jakością pracy.</strong> Polecam go jako doświadczonego specjalistę IT.
+              </blockquote>
+              <div class="testi-author">
+                <div class="testi-avatar" aria-hidden="true">
+                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="rgba(79,195,247,0.12)"/><circle cx="24" cy="19" r="8" fill="rgba(79,195,247,0.3)"/><path d="M4 44 Q4 34 24 34 Q44 34 44 44" fill="rgba(79,195,247,0.25)"/></svg>
+                </div>
+                <div>
+                  <p class="testi-name">Jolanta Øen 🇵🇱</p>
+                  <p class="testi-role">Eier, Jobselect Holding AS</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="testi-dots" role="tablist" aria-label="Nawigacja opinii">
+            <button class="testi-dot active" role="tab" aria-selected="true" aria-label="Opinia 1"></button>
+            <button class="testi-dot" role="tab" aria-selected="false" aria-label="Opinia 2"></button>
+            <button class="testi-dot" role="tab" aria-selected="false" aria-label="Opinia 3"></button>
+            <button class="testi-dot" role="tab" aria-selected="false" aria-label="Opinia 4"></button>
+            <button class="testi-dot" role="tab" aria-selected="false" aria-label="Opinia 5"></button>
+          </div>
+
+          <div class="testi-arrows">
+            <button class="testi-arrow testi-prev" aria-label="Poprzednia opinia">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><polyline points="15 18 9 12 15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+            <button class="testi-arrow testi-next" aria-label="Następna opinia">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><polyline points="9 18 15 12 9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SZKOLENIA AI ──────────────────── -->
+    <section class="training section reveal-section" id="training" aria-label="Szkolenia GenAI w Biznesie">
+      <div class="container">
+        <p class="eyebrow reveal-item" data-delay="0">SZKOLENIA &amp; WARSZTATY</p>
+        <h2 class="section-headline reveal-item" data-delay="80">GenAI w Biznesie — kurs, który zmienia sposób pracy.</h2>
+        <p class="section-sub reveal-item" data-delay="160">Praktyczne szkolenia z generatywnej AI dla polskich przedsiębiorców i zespołów działających w Norwegii. Nie teoria — konkretne narzędzia, które wdrażasz jeszcze tego samego dnia.</p>
+
+        <div class="training-grid">
+
+          <!-- Zdjęcie ze szkolenia -->
+          <div class="training-photo-wrap reveal-item" data-delay="0">
+            <img
+              src="assets/images/training-photo.jpg"
+              alt="Marcin Białecki prowadzący warsztat GenAI w Biznesie"
+              class="training-photo"
+              width="600"
+              height="420"
+              loading="lazy"
+            >
+            <div class="training-photo-placeholder" aria-hidden="true">
+              <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
+                <rect x="6" y="14" width="60" height="44" rx="4" stroke="rgba(79,195,247,0.3)" stroke-width="1.5"/>
+                <circle cx="24" cy="30" r="7" stroke="rgba(79,195,247,0.3)" stroke-width="1.5"/>
+                <path d="M6 46l16-12 14 10 12-9 18 13" stroke="rgba(79,195,247,0.25)" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="54" cy="24" r="5" fill="rgba(79,195,247,0.12)" stroke="rgba(79,195,247,0.3)" stroke-width="1.5"/>
+              </svg>
+              <span>[TRAINING_PHOTO — dodaj zdjęcie ze szkolenia]</span>
+            </div>
+            <div class="training-badges">
+              <span class="tag">200+ uczestników</span>
+              <span class="tag">Norwegia &amp; online</span>
+              <span class="tag">po polsku</span>
+            </div>
+          </div>
+
+          <!-- Opis szkolenia -->
+          <div class="training-info reveal-item" data-delay="180">
+            <div class="training-points">
+
+              <div class="training-point">
+                <span class="training-point-icon">🎯</span>
+                <div>
+                  <h4 class="training-point-title">Praktyka od pierwszej minuty</h4>
+                  <p class="training-point-desc">Żadnych slajdów z definicjami. Otwieramy narzędzia i działamy razem — prompt engineering, automatyzacja procesów, agenty AI.</p>
+                </div>
+              </div>
+
+              <div class="training-point">
+                <span class="training-point-icon">🇵🇱</span>
+                <div>
+                  <h4 class="training-point-title">Dla polskich firm w Norwegii</h4>
+                  <p class="training-point-desc">Szkolenie po polsku, w norweskim kontekście biznesowym. Wiem, z jakimi wyzwaniami mierzą się Polacy prowadzący firmy w Norwegii — bo sam od lat jestem jednym z nich.</p>
+                </div>
+              </div>
+
+              <div class="training-point">
+                <span class="training-point-icon">⚙️</span>
+                <div>
+                  <h4 class="training-point-title">Narzędzia dobrane do Twojego biznesu</h4>
+                  <p class="training-point-desc">ChatGPT, Claude, n8n, Make, Midjourney, systemy RAG i agenty AI — omawiamy to, co faktycznie przyda się w Twojej branży.</p>
+                </div>
+              </div>
+
+              <div class="training-point">
+                <span class="training-point-icon">📈</span>
+                <div>
+                  <h4 class="training-point-title">Mierzalne wyniki, nie certyfikat</h4>
+                  <p class="training-point-desc">Uczestnicy wychodzą z gotowymi automatyzacjami i realną oszczędnością czasu — nie z kolejnym plikiem PDF do szuflady.</p>
+                </div>
+              </div>
+
+            </div>
+
+            <a href="#contact" class="btn-primary training-cta">
+              Zapytaj o szkolenie dla swojej firmy →
+            </a>
+          </div>
+        </div>
+
+        <!-- Opinie uczestników -->
+        <div class="training-testi-wrap reveal-item" data-delay="0">
+          <p class="training-testi-label">Co mówią uczestnicy poprzednich edycji:</p>
+          <div class="training-testi-grid">
+
+            <div class="training-testi-card">
+              <span class="testi-quote-mark" aria-hidden="true">"</span>
+              <blockquote class="testi-text">
+                Kurs Marcina spełnił oczekiwania i nawet więcej — otworzył mi oczy, że to przyszłość. <strong>Ta część, kiedy stworzyliśmy działający sklep internetowy na jednej lekcji — to było imponujące!</strong> Marcin wytłumaczył w prosty sposób co to jest GenAI, tak że mogłam zdecydować, który program najbardziej pasuje do mojego biznesu.
+              </blockquote>
+              <div class="testi-author">
+                <div class="testi-avatar" aria-hidden="true">
+                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="rgba(79,195,247,0.12)"/><circle cx="24" cy="19" r="8" fill="rgba(79,195,247,0.3)"/><path d="M4 44 Q4 34 24 34 Q44 34 44 44" fill="rgba(79,195,247,0.25)"/></svg>
+                </div>
+                <div>
+                  <p class="testi-name">Katarzyna Czulińska 🇵🇱</p>
+                  <p class="testi-role">Właścicielka apteki i firmy technologicznej</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="training-testi-card">
+              <span class="testi-quote-mark" aria-hidden="true">"</span>
+              <blockquote class="testi-text">
+                Dostałam więcej niż oczekiwałam. Całość ma ogromną wartość i była omówiona na najwyższym poziomie. <strong>Wiedza zawarta w kursie przekroczyła moje wyobrażenia o AI.</strong> Najbardziej przydatna była wiedza o personalizacji ChatGPT, tworzeniu własnego sklepu oraz ostatni moduł — tworzenie podcastów i prezentacji z materiałów.
+              </blockquote>
+              <div class="testi-author">
+                <div class="testi-avatar" aria-hidden="true">
+                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="rgba(121,134,203,0.12)"/><circle cx="24" cy="19" r="8" fill="rgba(121,134,203,0.3)"/><path d="M4 44 Q4 34 24 34 Q44 34 44 44" fill="rgba(121,134,203,0.25)"/></svg>
+                </div>
+                <div>
+                  <p class="testi-name">Iwona Niewęgłowska 🇵🇱</p>
+                  <p class="testi-role">Właścicielka sklepu internetowego</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="training-testi-card">
+              <span class="testi-quote-mark" aria-hidden="true">"</span>
+              <blockquote class="testi-text">
+                Kurs spełnił moje oczekiwania — materiały były przystępne i pełne praktycznych przykładów. <strong>Udało mi się zautomatyzować kilka procesów w firmie, co przyczyniło się do oszczędności czasu oraz zwiększenia efektywności.</strong> Zdecydowanie polecam!
+              </blockquote>
+              <div class="testi-author">
+                <div class="testi-avatar" aria-hidden="true">
+                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="rgba(79,195,247,0.12)"/><circle cx="24" cy="19" r="8" fill="rgba(79,195,247,0.3)"/><path d="M4 44 Q4 34 24 34 Q44 34 44 44" fill="rgba(79,195,247,0.25)"/></svg>
+                </div>
+                <div>
+                  <p class="testi-name">Janek Hubrich 🇵🇱</p>
+                  <p class="testi-role">Właściciel, JaHu83 Brand Printing</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="training-testi-card">
+              <span class="testi-quote-mark" aria-hidden="true">"</span>
+              <blockquote class="testi-text">
+                Moim celem była konkretna wiedza o narzędziach AI do codziennej pracy. Kurs spełnił oczekiwania dzięki praktycznym informacjom — <strong>wiedza zawarta w kursie pomaga mi na co dzień.</strong> Szczególnie cenna była wiedza na temat systemów RAG-podobnych, które pozwalają budować własne bazy wiedzy dla AI.
+              </blockquote>
+              <div class="testi-author">
+                <div class="testi-avatar" aria-hidden="true">
+                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="rgba(121,134,203,0.12)"/><circle cx="24" cy="19" r="8" fill="rgba(121,134,203,0.3)"/><path d="M4 44 Q4 34 24 34 Q44 34 44 44" fill="rgba(121,134,203,0.25)"/></svg>
+                </div>
+                <div>
+                  <p class="testi-name">Michał Żurawiecki 🇵🇱</p>
+                  <p class="testi-role">Właściciel, HUSAR ARKITEKTER AS 🇳🇴</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── O MNIE ─────────────────────── -->
+    <section class="about section reveal-section" id="about" aria-label="O Marcinie">
+      <div class="container">
+        <p class="eyebrow reveal-item" data-delay="0">O MNIE</p>
+        <h2 class="section-headline reveal-item" data-delay="80">Więcej niż CV.</h2>
+
+        <div class="about-grid">
+
+          <!-- Narracja -->
+          <div class="about-narrative reveal-item" data-delay="0">
+            <p>Od niemal dziesięciu lat pomagam firmom — głównie małym i średnim — realizować ich cele biznesowe poprzez rozwiązania technologiczne szyte na miarę. W tym czasie pełniłem wiele ról: od programisty i marketingowca, przez konsultanta, po menedżera projektów i team leadera. Pracowałem dla małych agencji digitalowych, dużych korporacji IT i prowadziłem własne firmy. Wśród moich klientów byli m.in. Garda Sikring, Drammen Kommune, BDO, Mester Grønn, Scanox, Ramirent, Glitre Energi, Sopra Steria i wiele innych organizacji.</p>
+            <p>Kluczowym doświadczeniem było ponad trzyletnie prowadzenie projektu dla Bane NOR — norweskich kolei. Kierowałem zespołem budującym krytyczny system IT wspierający zarządzanie ruchem pociągów w całej Norwegii, z rocznym budżetem rzędu 30 milionów NOK. Dziś w Bouvet projektuję wewnętrzne narzędzie AI, które pomaga zespołom szybciej i bezpieczniej przygotowywać oferty — z kontrolą dostępu i pełną separacją danych między projektami. To oznacza, że pracuję z GenAI nie w teorii, lecz w realnych, wymagających środowiskach biznesowych.</p>
+            <p>Zawsze ciągnęło mnie do dzielenia się wiedzą. W Polsce robiłem to m.in. przez szkołę biznesu ASBIRO oraz fundację Praktyczna Edukacja przy Uniwersytecie Ekonomicznym w Poznaniu. W Norwegii — współpracując z Drammen Teknologiforum, Næringsforeningen i Drammensregionen, inicjatywami Polonii oraz prowadząc własne szkolenia firmowe. Moją misją jest wspieranie polskich przedsiębiorców w Norwegii w budowaniu trwałej przewagi konkurencyjnej przez praktyczne wdrażanie nowych technologii — w szczególności GenAI.</p>
+            <p>Jeśli budujesz coś ambitnego na norweskim rynku — cyfrowy produkt, zespół lub firmę gotową na AI — chętnie poświęcę Ci 30 minut. <a href="https://calendly.com/marcin-betterweb/30min" class="inline-link">Umów rozmowę tutaj</a>.</p>
+          </div>
+
+          <!-- Bento -->
+          <div class="bento-grid" id="bentoGrid">
+
+            <div class="bento-card bento-featured reveal-item" data-delay="0">
+              <div class="bento-icon">🏗️</div>
+              <div class="bento-content">
+                <h3 class="bento-title">IT PM w Bouvet · Bane NOR</h3>
+                <p class="bento-detail">3+ lata zarządzania krytycznym systemem IT dla norweskiej kolei. Budżet ~30M NOK/rok. Rygor PRINCE2, egzekucja Agile.</p>
+              </div>
+            </div>
+
+            <div class="bento-card reveal-item" data-delay="80">
+              <div class="bento-icon">🇳🇴</div>
+              <div class="bento-content">
+                <h3 class="bento-title">WLC NORGE AS</h3>
+                <p class="bento-detail">CEO · Partner dla rynku nordyckiego · Body-leasing WordPress/WooCommerce</p>
+              </div>
+            </div>
+
+            <div class="bento-card bento-trilingual reveal-item" data-delay="160">
+              <div class="bento-flag-strip" aria-hidden="true">
+                <span style="background:#DC143C"></span>
+                <span style="background:#FFFFFF"></span>
+                <span style="background:#003087"></span>
+                <span style="background:#FFFFFF"></span>
+                <span style="background:#EF2B2D"></span>
+              </div>
+              <div class="bento-icon">🌍</div>
+              <div class="bento-content">
+                <h3 class="bento-title">Trójjęzyczny</h3>
+                <p class="bento-detail">Polski · Norweski · Angielski — jedyny PM na spotkaniu, który rozumie obie strony.</p>
+              </div>
+            </div>
+
+            <div class="bento-card reveal-item" data-delay="240">
+              <div class="bento-icon">🎓</div>
+              <div class="bento-content">
+                <h3 class="bento-title">Certyfikowany</h3>
+                <p class="bento-detail">PRINCE2 Foundation · PSM I · PROSCI · AZ-900 · Mgr Ekonomia i Zarządzanie (UE Poznań)</p>
+              </div>
+            </div>
+
+            <div class="bento-card reveal-item" data-delay="320">
+              <div class="bento-icon">🎤</div>
+              <div class="bento-content">
+                <h3 class="bento-title">Edukator &amp; Prelegent</h3>
+                <p class="bento-detail">Drammen Teknologiforum · BouvetOne · TRUST Club · ASBIRO · Næringsforeningen · GenAI w biznesie</p>
+              </div>
+            </div>
+
+            <div class="bento-card bento-available reveal-item" data-delay="400">
+              <div class="bento-available-row">
+                <span class="pulse-dot green large"></span>
+                <p class="bento-available-text">Aktualnie dostępny na nowe projekty w Q2 2026</p>
+              </div>
+              <a href="#contact" class="inline-link">→ Porozmawiajmy</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── KONTAKT ─────────────────────── -->
+    <section class="contact section reveal-section" id="contact" aria-label="Kontakt">
+      <div class="contact-bg" aria-hidden="true"></div>
+      <div class="container">
+        <p class="eyebrow reveal-item" data-delay="0">KONTAKT</p>
+        <h2 class="section-headline reveal-item" data-delay="80">Gotowy, kiedy Ty.</h2>
+        <p class="section-sub reveal-item" data-delay="160">Bezpłatna rozmowa 30 min. Bez sprzedaży. Tylko realna rozmowa o Twoim projekcie.</p>
+
+        <div class="contact-grid">
+
+          <!-- Główne CTA -->
+          <div class="contact-primary reveal-item" data-delay="0">
+            <a href="https://calendly.com/marcin-betterweb/30min" class="btn-book-big" target="_blank" rel="noopener noreferrer">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/><line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2"/></svg>
+              Umów bezpłatną rozmowę
+            </a>
+            <div class="contact-badges">
+              <span>✓ Bezpłatne 30 min</span>
+              <span>✓ Bez zobowiązań</span>
+              <span>✓ Odpowiedź w 24h</span>
+              <span>✓ PL / NO / EN</span>
+            </div>
+            <div class="contact-avail">
+              <span class="pulse-dot green"></span>
+              Przyjmuję nowe projekty — Q2 2026
+            </div>
+          </div>
+
+          <!-- Dane kontaktowe -->
+          <div class="contact-secondary reveal-item" data-delay="160">
+            <div class="contact-links">
+              <a href="mailto:marcin@betterweb.no" class="contact-link-item" id="emailCopy" data-email="marcin@betterweb.no">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2"/><polyline points="2,4 12,13 22,4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                marcin@betterweb.no
+              </a>
+              <a href="tel:+4792509844" class="contact-link-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.07 2.18 2 2 0 012.06 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                +47 925 09 844
+              </a>
+              <a href="https://www.linkedin.com/in/marcin-bialecki1989/" class="contact-link-item" target="_blank" rel="noopener noreferrer">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="4" stroke="currentColor" stroke-width="2"/><line x1="8" y1="11" x2="8" y2="16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="8" y1="8" x2="8" y2="8.01" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M12 11v5M12 11a3 3 0 016 0v5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                linkedin.com/in/marcin-bialecki1989
+              </a>
+            </div>
+
+            <div id="emailToast" class="toast" role="alert" aria-live="polite">✓ Email skopiowany!</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── STOPKA ─────────────────────── -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p class="footer-copy">Marcin Białecki © 2026. Wszelkie prawa zastrzeżone.</p>
+      <nav class="footer-nav" aria-label="Nawigacja stopki">
+        <a href="#about" class="footer-link">O mnie</a>
+        <a href="#services" class="footer-link">Usługi</a>
+        <a href="#work" class="footer-link">Realizacje</a>
+        <a href="#contact" class="footer-link">Kontakt</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/marcin-bialecki1989/" class="footer-icon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="4" stroke="currentColor" stroke-width="2"/><line x1="8" y1="11" x2="8" y2="16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="8" y1="8" x2="8" y2="8.01" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M12 11v5M12 11a3 3 0 016 0v5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </a>
+      </div>
+    </div>
+    <p class="footer-built">Zaprojektowano zgodnie z najlepszymi praktykami web designu 2025–2026.</p>
+  </footer>
+
+  <!-- Niestandardowy kursor -->
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+  <script>
+/* =============================================
+   MARCIN BIAŁECKI — main.js
+   Animations, Interactions, UX
+   ============================================= */
+
+'use strict';
+
+// ── THEME ──────────────────────────────────────
+const THEME_KEY = 'marcin-theme';
+const html = document.documentElement;
+
+function applyTheme(theme) {
+  html.setAttribute('data-theme', theme);
+  localStorage.setItem(THEME_KEY, theme);
+}
+
+function initTheme() {
+  const saved = localStorage.getItem(THEME_KEY);
+  const system = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+  applyTheme(saved || system);
+}
+
+document.getElementById('themeToggle')?.addEventListener('click', () => {
+  const current = html.getAttribute('data-theme');
+  applyTheme(current === 'dark' ? 'light' : 'dark');
+});
+
+initTheme();
+
+// ── NAV SCROLL ─────────────────────────────────
+const nav = document.getElementById('nav');
+let lastScroll = 0;
+
+function onScroll() {
+  const y = window.scrollY;
+  nav?.classList.toggle('scrolled', y > 40);
+  lastScroll = y;
+}
+window.addEventListener('scroll', onScroll, { passive: true });
+
+// ── MOBILE MENU ────────────────────────────────
+const hamburger   = document.getElementById('hamburger');
+const overlay     = document.getElementById('mobileOverlay');
+const overlayClose = document.getElementById('overlayClose');
+
+function openMenu() {
+  overlay?.classList.add('open');
+  overlay?.removeAttribute('aria-hidden');
+  hamburger?.classList.add('open');
+  hamburger?.setAttribute('aria-expanded', 'true');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMenu() {
+  overlay?.classList.remove('open');
+  overlay?.setAttribute('aria-hidden', 'true');
+  hamburger?.classList.remove('open');
+  hamburger?.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+
+hamburger?.addEventListener('click', openMenu);
+overlayClose?.addEventListener('click', closeMenu);
+overlay?.addEventListener('click', (e) => { if (e.target === overlay) closeMenu(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+
+// Close on link click
+overlay?.querySelectorAll('.overlay-link').forEach(link => {
+  link.addEventListener('click', closeMenu);
+});
+
+// ── SMOOTH SCROLL ──────────────────────────────
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const id = this.getAttribute('href').slice(1);
+    if (!id) return;
+    const target = document.getElementById(id);
+    if (target) {
+      e.preventDefault();
+      const offset = 80;
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  });
+});
+
+// ── INTERSECTION OBSERVER — SCROLL REVEAL ──────
+function initScrollReveal() {
+  const items = document.querySelectorAll('.reveal-item');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const delay = parseInt(el.dataset.delay || '0', 10);
+        setTimeout(() => el.classList.add('in-view'), delay);
+        observer.unobserve(el);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  items.forEach(el => observer.observe(el));
+}
+
+// ── BENTO GRID — STAGGERED ENTRY ───────────────
+function initBento() {
+  const cards = document.querySelectorAll('.bento-card');
+  const delays = [0, 80, 160, 240, 320, 400];
+
+  const observer = new IntersectionObserver((entries) => {
+    if (entries.some(e => e.isIntersecting)) {
+      cards.forEach((card, i) => {
+        const delay = delays[i] || i * 80;
+        setTimeout(() => {
+          card.classList.add('in-view');
+          card.style.transitionDelay = '0ms'; // reset after entry
+        }, delay);
+      });
+      observer.disconnect();
+    }
+  }, { threshold: 0.1 });
+
+  const bentoGrid = document.getElementById('bentoGrid');
+  if (bentoGrid) observer.observe(bentoGrid);
+}
+
+// ── COUNTUP ANIMATION ──────────────────────────
+function countUp(el, target, suffix, duration = 1500) {
+  const start = performance.now();
+  const easeOut = t => 1 - Math.pow(1 - t, 3);
+
+  function update(now) {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const value = Math.round(easeOut(progress) * target);
+    el.textContent = value + suffix;
+    if (progress < 1) requestAnimationFrame(update);
+    else el.textContent = target + suffix;
+  }
+
+  requestAnimationFrame(update);
+}
+
+function initStats() {
+  const nums = document.querySelectorAll('.stat-num[data-target]');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseInt(el.dataset.target, 10);
+        const suffix = el.dataset.suffix || '';
+        countUp(el, target, suffix);
+        observer.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  nums.forEach(el => observer.observe(el));
+}
+
+// ── SERVICE CARD MOUSE GLOW ────────────────────
+function initCardGlow() {
+  document.querySelectorAll('.service-card').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top)  / rect.height) * 100;
+      card.style.setProperty('--mx', `${x}%`);
+      card.style.setProperty('--my', `${y}%`);
+    });
+  });
+}
+
+// ── TESTIMONIAL CAROUSEL ───────────────────────
+function initTestiCarousel() {
+  const track  = document.getElementById('testiTrack');
+  const dots   = document.querySelectorAll('.testi-dot');
+  const prev   = document.querySelector('.testi-prev');
+  const next   = document.querySelector('.testi-next');
+  if (!track) return;
+
+  const cards = track.querySelectorAll('.testi-card');
+  let current = 0;
+  let autoTimer;
+
+  function goTo(i) {
+    const total = cards.length;
+    current = ((i % total) + total) % total;
+    const cardWidth = cards[0].offsetWidth + 24; // gap
+    track.style.transform = `translateX(-${current * cardWidth}px)`;
+    dots.forEach((d, idx) => {
+      d.classList.toggle('active', idx === current);
+      d.setAttribute('aria-selected', idx === current ? 'true' : 'false');
+    });
+  }
+
+  prev?.addEventListener('click', () => { clearInterval(autoTimer); goTo(current - 1); });
+  next?.addEventListener('click', () => { clearInterval(autoTimer); goTo(current + 1); });
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => { clearInterval(autoTimer); goTo(i); });
+  });
+
+  // Auto-advance
+  autoTimer = setInterval(() => goTo(current + 1), 6000);
+
+  // Pause on hover
+  track.closest('.testi-carousel')?.addEventListener('mouseenter', () => clearInterval(autoTimer));
+  track.closest('.testi-carousel')?.addEventListener('mouseleave', () => {
+    autoTimer = setInterval(() => goTo(current + 1), 6000);
+  });
+
+  // Recalculate on resize
+  window.addEventListener('resize', () => goTo(current), { passive: true });
+}
+
+// ── CUSTOM CURSOR ──────────────────────────────
+function initCursor() {
+  if (window.matchMedia('(pointer: coarse)').matches) return;
+
+  const dot  = document.getElementById('cursorDot');
+  const ring = document.getElementById('cursorRing');
+  if (!dot || !ring) return;
+
+  let mouseX = 0, mouseY = 0;
+  let ringX  = 0, ringY  = 0;
+  const LERP = 0.12;
+
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    dot.style.left  = mouseX + 'px';
+    dot.style.top   = mouseY + 'px';
+  });
+
+  function animateRing() {
+    ringX += (mouseX - ringX) * LERP;
+    ringY += (mouseY - ringY) * LERP;
+    ring.style.left = ringX + 'px';
+    ring.style.top  = ringY + 'px';
+    requestAnimationFrame(animateRing);
+  }
+  animateRing();
+
+  // Hover effect on interactive elements
+  const interactive = 'a, button, [role="button"], input, textarea, .service-card, .bento-card, .case-card';
+  document.querySelectorAll(interactive).forEach(el => {
+    el.addEventListener('mouseenter', () => { dot.classList.add('hover'); ring.classList.add('hover'); });
+    el.addEventListener('mouseleave', () => { dot.classList.remove('hover'); ring.classList.remove('hover'); });
+  });
+
+  // Hide when leaving window
+  document.addEventListener('mouseleave', () => { dot.style.opacity = '0'; ring.style.opacity = '0'; });
+  document.addEventListener('mouseenter', () => { dot.style.opacity = '1'; ring.style.opacity = '1'; });
+}
+
+// ── EMAIL COPY-TO-CLIPBOARD ────────────────────
+function initEmailCopy() {
+  const emailEl = document.getElementById('emailCopy');
+  const toast   = document.getElementById('emailToast');
+  if (!emailEl || !toast) return;
+
+  emailEl.addEventListener('click', async (e) => {
+    const email = emailEl.dataset.email;
+    if (!email || email.startsWith('[')) return;
+
+    e.preventDefault();
+    try {
+      await navigator.clipboard.writeText(email);
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    } catch {
+      window.location.href = `mailto:${email}`;
+    }
+  });
+}
+
+// ── CONTACT FORM ───────────────────────────────
+function initForm() {
+  const form    = document.getElementById('contactForm');
+  const success = document.getElementById('formSuccess');
+  if (!form) return;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const action = form.getAttribute('action');
+
+    // Don't submit if placeholder
+    if (!action || action.includes('[FORM_ID]')) {
+      success?.classList.add('show');
+      form.reset();
+      return;
+    }
+
+    try {
+      const res = await fetch(action, {
+        method: 'POST',
+        body: data,
+        headers: { Accept: 'application/json' }
+      });
+      if (res.ok) {
+        success?.classList.add('show');
+        form.reset();
+        form.querySelectorAll('input, textarea, button[type="submit"]').forEach(el => {
+          el.disabled = true;
+        });
+      }
+    } catch (err) {
+      console.error('Form submission failed:', err);
+    }
+  });
+}
+
+// ── BRAND BAR — pause on hover ─────────────────
+function initBrandBar() {
+  const track = document.querySelector('.brand-track');
+  if (!track) return;
+  track.addEventListener('mouseenter', () => track.style.animationPlayState = 'paused');
+  track.addEventListener('mouseleave', () => track.style.animationPlayState = 'running');
+}
+
+// ── INIT ───────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  // Reduced motion check
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  initScrollReveal();
+  initBento();
+  initStats();
+  initCardGlow();
+  initTestiCarousel();
+  initEmailCopy();
+  initForm();
+  initBrandBar();
+
+  if (!reducedMotion) {
+    initCursor();
+  }
+
+  // Make all bento cards visible immediately if reduced motion
+  if (reducedMotion) {
+    document.querySelectorAll('.bento-card').forEach(c => c.classList.add('in-view'));
+  }
+});
+
+</script>
+</body>
+</html>
