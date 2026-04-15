@@ -1,0 +1,11 @@
+Options -MultiViews
+
+RewriteEngine On
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Route frend page to index.html for JS routing
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^marcin-vil-bli-frend\.html$ /index.html [L]

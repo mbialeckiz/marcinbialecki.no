@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Marcin Białecki | IT Project Manager · Konsultant AI · WLC NORGE | Norwegia</title>
@@ -1824,8 +1825,195 @@ img { max-width: 100%; display: block; }
     ]
   }
   </script>
+
+  <!-- === FREND PAGE EXTRAS === -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'frend': {
+                            'dark': '#0a0a0f',
+                            'navy': '#12121a',
+                            'slate': '#1a1a24',
+                            'accent': '#6366f1',
+                            'accent-light': '#818cf8',
+                            'warm': '#f97316',
+                            'text': '#e2e8f0',
+                            'muted': '#94a3b8'
+                        }
+                    },
+                    fontFamily: {
+                        'serif': ['Instrument Serif', 'Georgia', 'serif'],
+                        'sans': ['Plus Jakarta Sans', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+  <style>
+/* === FREND PAGE STYLES === */
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes fade-in-up {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        .animate-fade-in-up {
+            animation: fade-in-up 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #f97316 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .grid-pattern {
+            background-image: 
+                linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+        
+        .chat-container {
+            background: linear-gradient(135deg, rgba(26, 26, 36, 0.9) 0%, rgba(18, 18, 26, 0.95) 100%);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+        
+        .chat-message { animation: fade-in-up 0.4s ease-out forwards; }
+        
+        .suggested-question { transition: all 0.3s ease; }
+        .suggested-question:hover {
+            transform: translateX(5px);
+            background: rgba(99, 102, 241, 0.2);
+        }
+        
+        .cert-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+        }
+        
+        .match-line { position: relative; }
+        .match-line::after {
+            content: '';
+            position: absolute;
+            left: 0; bottom: 0;
+            width: 0; height: 2px;
+            background: linear-gradient(90deg, #6366f1, #f97316);
+            transition: width 0.6s ease;
+        }
+        .match-line:hover::after { width: 100%; }
+        
+        .photo-container { position: relative; }
+        .photo-container::before {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            background: linear-gradient(135deg, #6366f1, #a855f7, #f97316);
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0.8;
+        }
+        
+        html { scroll-behavior: smooth; }
+        
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a0f; }
+        ::-webkit-scrollbar-thumb { background: #6366f1; border-radius: 4px; }
+        
+        /* Lightbox styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+        .lightbox.active { display: flex; }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 12px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .lightbox-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg);
+        }
+        
+        .cert-thumbnail {
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        .cert-thumbnail:hover {
+            border-color: rgba(99, 102, 241, 0.5);
+            transform: scale(1.02);
+        }
+    
+</style>
 </head>
 <body>
+
+<script>
+(function() {
+  function router() {
+    var path = window.location.pathname;
+    var isFrend = path.indexOf('marcin-vil-bli-frend') !== -1;
+    var home = document.getElementById('page-home');
+    var frend = document.getElementById('page-frend');
+    if (!home || !frend) return;
+    home.style.display = isFrend ? 'none' : '';
+    frend.style.display = isFrend ? '' : 'none';
+    document.title = isFrend
+      ? 'Bli min Frend | Marcin Białecki - AI-Rådgiver'
+      : 'Marcin Białecki | IT Project Manager · Konsultant AI · WLC NORGE | Norwegia';
+  }
+  document.addEventListener('DOMContentLoaded', router);
+  window.addEventListener('popstate', router);
+})();
+</script>
+
+<div id="page-home">
+
 
   <!-- Pomiń do treści -->
   <a href="#main" class="skip-link">Przejdź do treści</a>
@@ -2996,5 +3184,1234 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 </script>
+
+</div>
+<div id="page-frend" style="display:none; background:#0a0a0f; min-height:100vh;">
+
+    
+    <!-- Background effects -->
+    <div class="fixed inset-0 grid-pattern pointer-events-none"></div>
+    <div class="fixed top-0 left-1/4 w-96 h-96 bg-frend-accent/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="fixed bottom-0 right-1/4 w-96 h-96 bg-frend-warm/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <!-- ============================================ -->
+    <!-- HERO SECTION -->
+    <!-- ============================================ -->
+    <section class="min-h-screen flex flex-col items-center justify-center px-4 py-12 relative">
+        <div class="max-w-4xl mx-auto text-center">
+            
+            <div class="animate-fade-in-up">
+                <span class="inline-block px-4 py-2 bg-frend-accent/10 border border-frend-accent/30 rounded-full text-frend-accent text-sm font-medium mb-6">
+                    🤖 Interaktiv søknad
+                </span>
+            </div>
+            
+            <h1 class="animate-fade-in-up delay-100 font-serif text-5xl md:text-7xl font-normal mb-6 leading-tight">
+                Hei, jeg er Marcins<br>
+                <span class="gradient-text italic">AI-tvilling</span>
+            </h1>
+            
+            <p class="animate-fade-in-up delay-200 text-xl md:text-2xl text-frend-muted mb-12 max-w-2xl mx-auto font-light">
+                Spør meg om Marcins erfaring, AI-kompetanse, eller hvorfor han vil bli en 
+                <span class="text-frend-warm font-medium">Frend</span>
+            </p>
+            
+            <!-- Chat Widget - Dify -->
+            <div class="animate-fade-in-up delay-300 max-w-2xl mx-auto mb-8">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-2xl">
+                    <iframe
+                        id="dify-chat"
+                        src=""
+                        style="width: 100%; height: 600px; display: block;"
+                        frameborder="0"
+                        allow="microphone">
+                    </iframe>
+                </div>
+            </div>
+            
+            <script>
+                // Force new chat session on every page load with random user ID
+                // Use setTimeout to prevent auto-scroll to iframe
+                window.addEventListener('load', function() {
+                    const randomUser = 'user_' + Math.random().toString(36).substr(2, 9);
+                    document.getElementById('dify-chat').src = 'https://udify.app/chatbot/VomqwbFcserCfreR?user=' + randomUser;
+                    // Ensure page stays at top
+                    window.scrollTo(0, 0);
+                });
+            </script>
+            
+            <div class="animate-fade-in-up delay-500">
+                <a href="#about" class="inline-flex flex-col items-center text-frend-muted hover:text-frend-accent transition-colors animate-float">
+                    <span class="text-sm mb-2">Scroll for mer</span>
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- ABOUT SECTION -->
+    <!-- ============================================ -->
+    <section id="about" class="py-24 px-4 relative">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                
+                <div class="flex justify-center md:justify-end order-1 md:order-2">
+                    <div class="photo-container w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden animate-float">
+                        <img src="assets/images/img-01.jpg" 
+                             alt="Marcin Białecki" 
+                             class="w-full h-full object-cover">
+                    </div>
+                </div>
+                
+                <div class="order-2 md:order-1">
+                    <h2 class="font-serif text-4xl md:text-5xl mb-6">
+                        Marcin <span class="gradient-text italic">Białecki</span>
+                    </h2>
+                    <p class="text-frend-accent font-medium mb-4">
+                        AI-Rådgiver • Prosjektleder • Kursholder
+                    </p>
+                    <p class="text-xl text-frend-muted leading-relaxed mb-6">
+                        Jeg kombinerer <strong class="text-frend-text">8+ års IT-ledererfaring</strong> med en lidenskap 
+                        for AI og kunnskapsdeling. Fra små digitale byråer til samfunnskritisk IT-infrastruktur hos Bane NOR 
+                        – jeg bygger broer mellom teknologi og mennesker, og brenner for å få folk rundt meg til å lykkes sammen.
+                    </p>
+                    <p class="text-xl text-frend-muted leading-relaxed mb-8">
+                        Nå vil jeg bruke alt dette til å hjelpe <span class="text-frend-warm font-semibold">Frends kunder</span> 
+                        med å utnytte mulighetene i AI.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-6">
+                        <div class="flex items-center gap-2">
+                            <span class="text-2xl">📍</span>
+                            <span class="text-frend-muted">Norge</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-2xl">🗣️</span>
+                            <span class="text-frend-muted">NO / EN / PL</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-2xl">🎓</span>
+                            <span class="text-frend-muted">MBA + Master + 6 AI-sertifiseringer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- MATCH SECTION -->
+    <!-- ============================================ -->
+    <section class="py-24 px-4 bg-frend-navy/50 relative">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl md:text-5xl mb-4">
+                    Hvorfor vi er en <span class="gradient-text italic">match</span>
+                </h2>
+                <p class="text-xl text-frend-muted">Frends behov møter Marcins erfaring</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="match-line bg-frend-slate/30 rounded-xl p-6 border border-frend-slate/50 hover:border-frend-accent/50 transition-all">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-frend-accent/20 flex items-center justify-center flex-shrink-0">
+                            <span class="text-2xl">🎤</span>
+                        </div>
+                        <div>
+                            <p class="text-frend-muted text-sm mb-1">Frend trenger</p>
+                            <p class="text-lg font-medium mb-2">Kurs & workshops</p>
+                            <p class="text-frend-accent text-sm">✓ Marcin holder AI-kurs både internt hos Bouvet samt for SMB-bedrifter i dag</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="match-line bg-frend-slate/30 rounded-xl p-6 border border-frend-slate/50 hover:border-frend-accent/50 transition-all">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-frend-accent/20 flex items-center justify-center flex-shrink-0">
+                            <span class="text-2xl">🤖</span>
+                        </div>
+                        <div>
+                            <p class="text-frend-muted text-sm mb-1">Frend trenger</p>
+                            <p class="text-lg font-medium mb-2">Språkmodeller (GPT, Claude, Gemini)</p>
+                            <p class="text-frend-accent text-sm">✓ Flere ikke-kommersielle prosjekter</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="match-line bg-frend-slate/30 rounded-xl p-6 border border-frend-slate/50 hover:border-frend-accent/50 transition-all">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-frend-accent/20 flex items-center justify-center flex-shrink-0">
+                            <span class="text-2xl">📊</span>
+                        </div>
+                        <div>
+                            <p class="text-frend-muted text-sm mb-1">Frend trenger</p>
+                            <p class="text-lg font-medium mb-2">AI-strategi</p>
+                            <p class="text-frend-accent text-sm">✓ Erfaring med IT produktstrategi kombinert med AI kunnskap + flere kurs</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="match-line bg-frend-slate/30 rounded-xl p-6 border border-frend-slate/50 hover:border-frend-accent/50 transition-all">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-frend-accent/20 flex items-center justify-center flex-shrink-0">
+                            <span class="text-2xl">💼</span>
+                        </div>
+                        <div>
+                            <p class="text-frend-muted text-sm mb-1">Frend trenger</p>
+                            <p class="text-lg font-medium mb-2">Rådgivningserfaring</p>
+                            <p class="text-frend-accent text-sm">✓ 8+ år innen IT, 5år i byrå, 3+ år som konsulent, Bouvet</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="match-line bg-frend-slate/30 rounded-xl p-6 border border-frend-slate/50 hover:border-frend-accent/50 transition-all">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-frend-accent/20 flex items-center justify-center flex-shrink-0">
+                            <span class="text-2xl">⚡</span>
+                        </div>
+                        <div>
+                            <p class="text-frend-muted text-sm mb-1">Frend trenger</p>
+                            <p class="text-lg font-medium mb-2">Automatisering</p>
+                            <p class="text-frend-accent text-sm">✓ n8n, Zapier, Make, No-Code, Low-Code</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="match-line bg-frend-slate/30 rounded-xl p-6 border border-frend-slate/50 hover:border-frend-accent/50 transition-all">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-frend-accent/20 flex items-center justify-center flex-shrink-0">
+                            <span class="text-2xl">🤝</span>
+                        </div>
+                        <div>
+                            <p class="text-frend-muted text-sm mb-1">Frend trenger</p>
+                            <p class="text-lg font-medium mb-2">Relasjonsbygging</p>
+                            <p class="text-frend-accent text-sm">✓ "Folk liker meg, jeg liker folk"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- MER OM MEG SECTION -->
+    <!-- ============================================ -->
+    <section class="py-24 px-4 relative">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-4xl md:text-5xl mb-4">
+                    Mer om <span class="gradient-text italic">meg</span>
+                </h2>
+            </div>
+            
+            <div class="bg-frend-slate/30 rounded-2xl p-8 border border-frend-slate/50">
+                <div class="text-frend-muted leading-relaxed space-y-4">
+                    <!-- Always visible part -->
+                    <p>
+                        Jeg tror veldig på livslang læring, derfor har jeg de siste to-tre årene brukt mye tid på å bygge skikkelig AI-kompetanse. Jeg har tatt flere spesialiserte kurs ledet av eksperter i AI-verden – blant annet om AI-drevet produktutvikling, implementering av AI-prosjekter i organisasjoner, og Googles program om AI i forretningsutvikling.
+                    </p>
+                    
+                    <!-- Hidden part -->
+                    <div id="mer-om-meg-content" class="hidden space-y-4">
+                        <p>
+                            I tillegg har jeg dykket ned i mer tekniske ting som AI-agenter, RAG-arkitektur og implementering av store språkmodeller. Denne miksen av strategi og teknikk gjør at jeg kan bidra på flere nivåer i prosjekter.
+                        </p>
+                        <p>
+                            Siden 2022 har jeg jobbet som konsulent og prosjektleder hos Bouvet Norge AS, der jeg har vært ansvarlig for to team som jobber med samfunnskritiske systemer – blant annet Bane NORs togtrafikkstyringssystem samt bestillingssystem for togruter. Det har gitt meg solid trening i å kartlegge behov med brukerne, få med ledelsen på strategier, og jobbe godt sammen med erfarne utviklere på moderne teknologi som Azure.
+                        </p>
+                        <p>
+                            Før 2022 jobbet jeg i nesten 5 år i et digitalt byrå i Drammen, først som utvikler, deretter som prosjektleder og avdelingsleder for et remote team fra Polen, der jeg fikk mulighet til å jobbe med titalls kunder fra ulike bransjer og ulike størrelser. Med over 8 års erfaring innen IT-ledelse og en bakgrunn innen økonomi og markedsføring, skjønner jeg godt hvordan teknologi og forretning henger sammen.
+                        </p>
+                        <p>
+                            I dag holder jeg også kurs om generativ AI for polske gründere i Norge (og frivillige organisasjoner), der jeg prøver å gjøre komplekse AI-konsepter forståelige og engasjerende. Internt hos Bouvet har jeg holdt kurs og workshops om RAG-arkitektur, generativ AI for ledere, produktutvikling og AI-agenter. Å tilpasse budskapet til ulike folk – det trives jeg med.
+                        </p>
+                        <p>
+                            Det som driver meg mest, er å jobbe med AI i praksis – ikke bare som teknologi, men som et verktøy for å løse ekte utfordringer. Når jeg ser hvordan riktig brukt AI kan gjøre prosesser smartere og skape konkret verdi, gir det meg skikkelig arbeidsglede. Jeg bruker mye AI hver dag for å jobbe bedre selv, og er genuint nysgjerrig på hvordan teknologien kan skape verdi for andre.
+                        </p>
+                        <p>
+                            Jeg lærer best når jeg jobber med flinke folk som pusher meg, samtidig som jeg kan bidra med det jeg kan. Etter flere år som konsulent har jeg innsett at små tverrfaglige team fremfor hodeutleie er måten jeg foretrekker å jobbe på. <strong class="text-frend-text">Frends modell og ambisjon om å bli det ledende AI-fagmiljøet i Norge treffer meg rett i hjertet. Det er akkurat den typen sted jeg vil være med på å bygge.</strong>
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Read more button -->
+                <button onclick="toggleMerOmMeg()" id="mer-om-meg-btn" class="mt-6 px-6 py-3 bg-frend-accent/20 hover:bg-frend-accent/30 border border-frend-accent/50 rounded-xl text-frend-accent font-medium transition-all duration-300 flex items-center gap-2 mx-auto">
+                    <span id="mer-om-meg-btn-text">Les mer om meg</span>
+                    <svg id="mer-om-meg-icon" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- AI CERTIFICATIONS SECTION -->
+    <!-- ============================================ -->
+    <section class="py-24 px-4 relative">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-2 bg-frend-warm/10 border border-frend-warm/30 rounded-full text-frend-warm text-sm font-medium mb-6">
+                    300+ timer formell AI-utdanning
+                </span>
+                <h2 class="font-serif text-4xl md:text-5xl mb-4">
+                    AI-<span class="gradient-text italic">kompetanse</span>
+                </h2>
+                <p class="text-xl text-frend-muted">Her ser du de mest relevante AI-relaterte sertifikatene. Klikk på bildene under for å se dem i full størrelse</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Card 1: AI Product Heroes -->
+                <div class="cert-card bg-frend-slate/30 rounded-2xl p-6 border border-frend-slate/50">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-3xl">🏆</span>
+                        <span class="text-sm text-frend-muted">Des 2025</span>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">AI_Product Heroes</h3>
+                    <p class="text-sm text-frend-muted mb-4">Brave Courses</p>
+                    <p class="text-sm text-frend-text mb-4">Komplett AI-drevet produktutviklingsworkflow: Sprint, User Insight, Prototype Lab, Analytics, Ethics</p>
+                    <img src="assets/images/img-02.jpg" 
+                         alt="AI Product Heroes Certificate" 
+                         class="cert-thumbnail w-full h-40 object-contain rounded-lg bg-white/5"
+                         onclick="openLightbox(this.src)">
+                </div>
+                
+                <!-- Card 2: AI Managers -->
+                <div class="cert-card bg-frend-slate/30 rounded-2xl p-6 border border-frend-slate/50">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-3xl">📈</span>
+                        <span class="text-sm text-frend-muted">Jun 2025</span>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">AI_Managers</h3>
+                    <p class="text-sm text-frend-muted mb-4">Brave Courses</p>
+                    <p class="text-sm text-frend-text mb-4">Vellykket implementering av AI-prosjekter: Discovery, Data, Tech Stack, ROI, Stakeholders</p>
+                    <img src="assets/images/img-03.jpg" 
+                         alt="AI Managers Certificate" 
+                         class="cert-thumbnail w-full h-40 object-contain rounded-lg bg-white/5"
+                         onclick="openLightbox(this.src)">
+                </div>
+                
+                <!-- Card 3: Google AI -->
+                <div class="cert-card bg-frend-slate/30 rounded-2xl p-6 border border-frend-slate/50">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-3xl">🔍</span>
+                        <span class="text-sm text-frend-muted">Mar 2025</span>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Google AI Skills</h3>
+                    <p class="text-sm text-frend-muted mb-4">Google / SGH</p>
+                    <p class="text-sm text-frend-text mb-4">AI i forretningsutvikling - 5-ukers program med avsluttende eksamen</p>
+                    <img src="assets/images/img-04.jpg" 
+                         alt="Google AI Skills Certificate" 
+                         class="cert-thumbnail w-full h-40 object-contain rounded-lg bg-white/5"
+                         onclick="openLightbox(this.src)">
+                </div>
+                
+                <!-- Card 4: AI Agents -->
+                <div class="cert-card bg-frend-slate/30 rounded-2xl p-6 border border-frend-slate/50">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-3xl">🤖</span>
+                        <span class="text-sm text-frend-muted">Jan 2025</span>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">AI Agents</h3>
+                    <p class="text-sm text-frend-muted mb-4">Elephant AI</p>
+                    <p class="text-sm text-frend-text mb-4">Solutions for the Future - 6 ukers intensivt program, 22 timer workshops</p>
+                    <img src="assets/images/img-05.jpg" 
+                         alt="AI Agents Certificate" 
+                         class="cert-thumbnail w-full h-40 object-contain rounded-lg bg-white/5"
+                         onclick="openLightbox(this.src)">
+                </div>
+                
+                <!-- Card 5: GenAI RAG -->
+                <div class="cert-card bg-frend-slate/30 rounded-2xl p-6 border border-frend-slate/50">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-3xl">🔗</span>
+                        <span class="text-sm text-frend-muted">Nov 2024</span>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">GenAI Code with RAG</h3>
+                    <p class="text-sm text-frend-muted mb-4">Elephant AI</p>
+                    <p class="text-sm text-frend-text mb-4">RAG-arkitektur og implementering - 26 timer workshops, praktisk prosjekt</p>
+                    <img src="assets/images/img-06.jpg" 
+                         alt="GenAI RAG Certificate" 
+                         class="cert-thumbnail w-full h-40 object-contain rounded-lg bg-white/5"
+                         onclick="openLightbox(this.src)">
+                </div>
+                
+                <!-- Card 6: AI for Managers -->
+                <div class="cert-card bg-frend-slate/30 rounded-2xl p-6 border border-frend-slate/50">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-3xl">👔</span>
+                        <span class="text-sm text-frend-muted">Jun 2024</span>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">AI for Managers</h3>
+                    <p class="text-sm text-frend-muted mb-4">Elephant AI</p>
+                    <p class="text-sm text-frend-text mb-4">7-ukers program om AI-ledelse - 35+ timer workshops, capstone-prosjekt</p>
+                    <img src="assets/images/img-07.jpg" 
+                         alt="AI for Managers Certificate" 
+                         class="cert-thumbnail w-full h-40 object-contain rounded-lg bg-white/5"
+                         onclick="openLightbox(this.src)">
+                </div>
+                
+            </div>
+            
+            <div class="mt-12 text-center">
+                <p class="text-frend-muted">
+                    <span class="text-frend-accent">+</span> Praktisk erfaring: AI-kurs for entreprenører, intern Bouvet-opplæring, daglig AI-bruk
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- OTHER CERTIFICATIONS SECTION -->
+    <!-- ============================================ -->
+    <section class="py-24 px-4 bg-frend-navy/50 relative">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl md:text-5xl mb-4">
+                    Andre kurs / <span class="gradient-text italic">sertifiseringer</span>
+                </h2>
+                <p class="text-xl text-frend-muted">Prosjektledelse, metodikk og skyteknologi</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+                
+                <div class="bg-frend-slate/30 rounded-xl p-5 border border-frend-slate/50 hover:border-frend-accent/50 transition-all">
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl">☁️</span>
+                        <div>
+                            <p class="font-medium text-frend-text">AZ-900</p>
+                            <p class="text-xs text-frend-muted">Microsoft Azure Fundamentals</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-frend-slate/30 rounded-xl p-5 border border-frend-slate/50 hover:border-frend-accent/50 transition-all">
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl">🔄</span>
+                        <div>
+                            <p class="font-medium text-frend-text">ICP-ATF</p>
+                            <p class="text-xs text-frend-muted">Agile Team Facilitator</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-frend-slate/30 rounded-xl p-5 border border-frend-slate/50 hover:border-frend-accent/50 transition-all">
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl">👑</span>
+                        <div>
+                            <p class="font-medium text-frend-text">PRINCE2</p>
+                            <p class="text-xs text-frend-muted">Foundation</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-frend-slate/30 rounded-xl p-5 border border-frend-slate/50 hover:border-frend-accent/50 transition-all">
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl">🏃</span>
+                        <div>
+                            <p class="font-medium text-frend-text">PSM I</p>
+                            <p class="text-xs text-frend-muted">Professional Scrum Master I</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-frend-slate/30 rounded-xl p-5 border border-frend-slate/50 hover:border-frend-accent/50 transition-all">
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl">🔀</span>
+                        <div>
+                            <p class="font-medium text-frend-text">Prosci®</p>
+                            <p class="text-xs text-frend-muted">Certified Change Practitioner</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-frend-slate/30 rounded-xl p-5 border border-frend-slate/50 hover:border-frend-accent/50 transition-all">
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl">📦</span>
+                        <div>
+                            <p class="font-medium text-frend-text">Produktledelse</p>
+                            <p class="text-xs text-frend-muted">Produktutvikling i praksis</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-frend-slate/30 rounded-xl p-5 border border-frend-slate/50 hover:border-frend-accent/50 transition-all">
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl">🎯</span>
+                        <div>
+                            <p class="font-medium text-frend-text">OKR</p>
+                            <p class="text-xs text-frend-muted">For offentlig sektor</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-frend-slate/30 rounded-xl p-5 border border-frend-slate/50 hover:border-frend-accent/50 transition-all">
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl">🗣️</span>
+                        <div>
+                            <p class="font-medium text-frend-text">Workshopledelse</p>
+                            <p class="text-xs text-frend-muted">Fasilitering og gjennomføring</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- EXPERIENCE HIGHLIGHTS -->
+    <!-- ============================================ -->
+    <section class="py-24 px-4 bg-frend-navy/50 relative">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl md:text-5xl mb-4">
+                    Arbeids<span class="gradient-text italic">erfaring</span>
+                </h2>
+                <p class="text-xl text-frend-muted">Fra samfunnskritisk infrastruktur til kunnskapsdeling</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <div class="bg-gradient-to-br from-frend-slate/50 to-frend-slate/30 rounded-2xl p-6 border border-frend-slate/50 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-frend-accent/5 rounded-full blur-2xl"></div>
+                    <span class="text-3xl mb-3 block">🏢</span>
+                    <p class="text-frend-accent text-xs mb-2">08.2022 - nåværende</p>
+                    <h3 class="text-lg font-semibold mb-1">Bouvet Norge AS</h3>
+                    <p class="text-frend-muted text-sm mb-3">Konsulent, Prosjektleder</p>
+                    <div class="flex flex-wrap gap-1">
+                        <span class="px-2 py-1 bg-frend-slate/50 rounded text-xs text-frend-muted">Teamledelse</span>
+                        <span class="px-2 py-1 bg-frend-slate/50 rounded text-xs text-frend-muted">AI</span>
+                        <span class="px-2 py-1 bg-frend-slate/50 rounded text-xs text-frend-muted">Scrum</span>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-frend-slate/50 to-frend-slate/30 rounded-2xl p-6 border border-frend-slate/50 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-frend-warm/5 rounded-full blur-2xl"></div>
+                    <span class="text-3xl mb-3 block">💼</span>
+                    <p class="text-frend-accent text-xs mb-2">10.2017 - 07.2022</p>
+                    <h3 class="text-lg font-semibold mb-1">Godt Sagt AS</h3>
+                    <p class="text-frend-muted text-sm mb-3">Prosjektleder, Rådgiver, Utvikler</p>
+                    <div class="flex flex-wrap gap-1">
+                        <span class="px-2 py-1 bg-frend-slate/50 rounded text-xs text-frend-muted">E-handel</span>
+                        <span class="px-2 py-1 bg-frend-slate/50 rounded text-xs text-frend-muted">WordPress</span>
+                        <span class="px-2 py-1 bg-frend-slate/50 rounded text-xs text-frend-muted">Integrasjon</span>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-frend-slate/50 to-frend-slate/30 rounded-2xl p-6 border border-frend-slate/50 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-purple-500/5 rounded-full blur-2xl"></div>
+                    <span class="text-3xl mb-3 block">💻</span>
+                    <p class="text-frend-accent text-xs mb-2">07.2016 - 10.2017</p>
+                    <h3 class="text-lg font-semibold mb-1">Freelance</h3>
+                    <p class="text-frend-muted text-sm mb-3">Webutvikler, Digital markedsfører</p>
+                    <div class="flex flex-wrap gap-1">
+                        <span class="px-2 py-1 bg-frend-slate/50 rounded text-xs text-frend-muted">Web</span>
+                        <span class="px-2 py-1 bg-frend-slate/50 rounded text-xs text-frend-muted">Marketing</span>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-frend-slate/50 to-frend-slate/30 rounded-2xl p-6 border border-frend-slate/50 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-frend-accent/5 rounded-full blur-2xl"></div>
+                    <span class="text-3xl mb-3 block">🏗️</span>
+                    <p class="text-frend-accent text-xs mb-2">07.2012 - 07.2016</p>
+                    <h3 class="text-lg font-semibold mb-1">B&C S.A., Polen</h3>
+                    <p class="text-frend-muted text-sm mb-3">Drifts-/prosjektkoordinator, Digital marketer</p>
+                    <div class="flex flex-wrap gap-1">
+                        <span class="px-2 py-1 bg-frend-slate/50 rounded text-xs text-frend-muted">Koordinering</span>
+                        <span class="px-2 py-1 bg-frend-slate/50 rounded text-xs text-frend-muted">Web</span>
+                        <span class="px-2 py-1 bg-frend-slate/50 rounded text-xs text-frend-muted">Marketing</span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- PROSJEKTERFARING ACCORDION SECTION -->
+    <!-- ============================================ -->
+    <section class="py-24 px-4 bg-frend-navy/50 relative">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl md:text-5xl mb-4">
+                    Prosjekt<span class="gradient-text italic">erfaring</span>
+                </h2>
+                <p class="text-xl text-frend-muted">Detaljer fra utvalgte prosjekter</p>
+            </div>
+            
+            <div class="space-y-4">
+                
+                <!-- Accordion Item 1: Bane NOR -->
+                <div class="accordion-item bg-frend-slate/30 rounded-xl border border-frend-slate/50 overflow-hidden">
+                    <button onclick="toggleAccordion(this)" class="accordion-header w-full px-6 py-5 flex items-center justify-between text-left hover:bg-frend-slate/50 transition-colors">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl">🚂</span>
+                            <div>
+                                <h3 class="font-semibold text-frend-text">Bane NOR – Forvaltning og videreutvikling av FIDO</h3>
+                                <p class="text-sm text-frend-muted">Teamleder / Prosjektleder • 09.2022 - nåværende</p>
+                            </div>
+                        </div>
+                        <svg class="accordion-icon w-6 h-6 text-frend-accent transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="accordion-content hidden px-6 pb-5">
+                        <div class="pt-4 border-t border-frend-slate/50">
+                            <p class="text-frend-muted mb-4">
+                                Bane NOR har et Bouvet-team som forvalter og videreutvikler en FIDO applikasjon klassifisert som et samfunnskritisk system som brukes daglig av alle aktører involverte i togfremføring i Norge.
+                            </p>
+                            <p class="text-frend-text mb-2 font-medium">Ansvar og oppgaver:</p>
+                            <ul class="text-frend-muted space-y-2 ml-4">
+                                <li>• Ansvar for et utviklerteam, koordinering av utvikling samt vedlikehold av FIDO-applikasjonen</li>
+                                <li>• Spesifisering samt bistand med estimering av oppgaver, risikostyring, ansvar for budsjetter</li>
+                                <li>• Kontinuerlig prosessforbedring for å sikre effektivitet og kvalitet i leveransene</li>
+                                <li>• Fasilitering av møter samt Scrum eventer og workshops</li>
+                                <li>• Teamorganisering/teamutvikling samt ansvar for samarbeid mellom FIDO/BEST-teamene og andre team hos kunden</li>
+                                <li>• Koordinering av moderniseringsprosess knyttet til skyreise av en av systemene</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Accordion Item 2: Litex AS -->
+                <div class="accordion-item bg-frend-slate/30 rounded-xl border border-frend-slate/50 overflow-hidden">
+                    <button onclick="toggleAccordion(this)" class="accordion-header w-full px-6 py-5 flex items-center justify-between text-left hover:bg-frend-slate/50 transition-colors">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl">🧮</span>
+                            <div>
+                                <h3 class="font-semibold text-frend-text">Litex AS – Plukklistekalkulator</h3>
+                                <p class="text-sm text-frend-muted">Teamleder / Teknisk Prosjektleder • 03.2022 - 05.2022</p>
+                            </div>
+                        </div>
+                        <svg class="accordion-icon w-6 h-6 text-frend-accent transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="accordion-content hidden px-6 pb-5">
+                        <div class="pt-4 border-t border-frend-slate/50">
+                            <p class="text-frend-muted mb-4">
+                                Litex AS, som produserer spesialplater og membransystem til vegg og gulv i våtrom, ønsket å utvide nettsiden sin med en kalkulator som kunne hjelpe sluttkundene å beregne akkurat hvor mye materiell/produkter de har behov for å kjøpe, basert på opplysningene oppgitt av kunden.
+                            </p>
+                            <p class="text-frend-muted mb-4">
+                                Løsningen skulle være enkel å bruke og resultere i en plukkliste som sluttkunden kan få tilsendt på mail til utskrift for å ha med i butikken. <strong class="text-frend-text">Applikasjonen ble levert på rekordtid</strong>, da kunden hadde ønske om å presentere den på en stor byggemesse i Sverige.
+                            </p>
+                            <p class="text-frend-text mb-2 font-medium">Ansvar og oppgaver:</p>
+                            <ul class="text-frend-muted space-y-2 ml-4">
+                                <li>• Koordinering av arbeidet i utviklerteamet</li>
+                                <li>• Dialog med designere, prosjektleder og produkteier hos kunden for løpende avklaringer</li>
+                                <li>• Ansvar for testing samt kvalitetssikring av appen</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Accordion Item 3: Jan F. Andersen AS -->
+                <div class="accordion-item bg-frend-slate/30 rounded-xl border border-frend-slate/50 overflow-hidden">
+                    <button onclick="toggleAccordion(this)" class="accordion-header w-full px-6 py-5 flex items-center justify-between text-left hover:bg-frend-slate/50 transition-colors">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl">🏪</span>
+                            <div>
+                                <h3 class="font-semibold text-frend-text">Jan F. Andersen AS – B2B-handel for veterinærbransjen</h3>
+                                <p class="text-sm text-frend-muted">Teamleder / Teknisk Prosjektleder • 11.2018 - 07.2022</p>
+                            </div>
+                        </div>
+                        <svg class="accordion-icon w-6 h-6 text-frend-accent transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="accordion-content hidden px-6 pb-5">
+                        <div class="pt-4 border-t border-frend-slate/50">
+                            <p class="text-frend-muted mb-4">
+                                Jan F. Andersen AS (JFA) er den største nettbutikken innen B2B veterinærmarkedet i landet. Den kraftige veksten kombinert med den gamle kodebasen i nettbutikken gjorde at behovet for modernisering av den tekniske løsningen ble løftet opp.
+                            </p>
+                            <p class="text-frend-muted mb-4">
+                                Resultatet var et prosjekt for å utvikle en løsning som kunne håndtere enda større vekst i fremtiden, med tanke på antall produkter samt bestillinger i nettbutikken, og ikke minst trafikken.
+                            </p>
+                            <p class="text-frend-text mb-2 font-medium">Ansvar og oppgaver:</p>
+                            <ul class="text-frend-muted space-y-2 ml-4">
+                                <li>• Ansvar for utviklerteamets leveranse</li>
+                                <li>• Koordinering med integrasjonspartneren som leverte APIet til ZiriusERP</li>
+                                <li>• Behovsavklaring, spesifisering og estimering av nye løsning for nettbutikken</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Accordion Item 4: Garda Sikring -->
+                <div class="accordion-item bg-frend-slate/30 rounded-xl border border-frend-slate/50 overflow-hidden">
+                    <button onclick="toggleAccordion(this)" class="accordion-header w-full px-6 py-5 flex items-center justify-between text-left hover:bg-frend-slate/50 transition-colors">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl">🔐</span>
+                            <div>
+                                <h3 class="font-semibold text-frend-text">Garda Sikring – Integrasjon av betalingssystem og bomløsning</h3>
+                                <p class="text-sm text-frend-muted">Teamleder / Rådgiver • 10.2021 - 02.2022</p>
+                            </div>
+                        </div>
+                        <svg class="accordion-icon w-6 h-6 text-frend-accent transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="accordion-content hidden px-6 pb-5">
+                        <div class="pt-4 border-t border-frend-slate/50">
+                            <p class="text-frend-muted mb-4">
+                                Garda Sikring er Nordens ledende aktør innenfor sikring av kritisk infrastruktur, bygg og anlegg ol. som utviklet en ny styringsenhet, Garda Smart Service (GSS). Marcin jobbet på to delprosjekter tilknyttet oppgradering av den nye GSS styringsenheten:
+                            </p>
+                            <ul class="text-frend-muted space-y-2 ml-4 mb-4">
+                                <li>• <strong class="text-frend-text">Integrasjon av betalingssystem og bomløsning:</strong> målet var å lage en kobling mellom to APIer for å gjøre det mulig å utløse bomåpning ved SMS-sending etterfulgt av VIPPS-betaling</li>
+                                <li>• <strong class="text-frend-text">QR-koder for bomløsning:</strong> en webapplikasjon med QR-koder for service samt intern kontroll av bomløsningen. Delprosjektet ble levert på kort tid etter hastevarsel</li>
+                            </ul>
+                            <p class="text-frend-muted mb-4">
+                                Oppgraderingene av systemet var avgjørende for å kunne etablere bruker-/kundeportal og høste gevinster i driften i form av bedre kontroll, enklere drift og reduserte eierkostnader (TCO). Prinsipper fra Scrum ble brukt under leveransen sammen med Atlassian sine oppfølgingsverktøy.
+                            </p>
+                            <p class="text-frend-text mb-2 font-medium">Ansvar og oppgaver:</p>
+                            <ul class="text-frend-muted space-y-2 ml-4">
+                                <li>• Kravspesifisering, bemanning og styring av ressurser</li>
+                                <li>• Oppfølging av fremdrift</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Accordion Item 5: BDO Buskerud -->
+                <div class="accordion-item bg-frend-slate/30 rounded-xl border border-frend-slate/50 overflow-hidden">
+                    <button onclick="toggleAccordion(this)" class="accordion-header w-full px-6 py-5 flex items-center justify-between text-left hover:bg-frend-slate/50 transition-colors">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl">📊</span>
+                            <div>
+                                <h3 class="font-semibold text-frend-text">BDO Buskerud – Visualisering av selskapsstruktur</h3>
+                                <p class="text-sm text-frend-muted">Teamleder / Rådgiver • 03.2021 - 09.2021</p>
+                            </div>
+                        </div>
+                        <svg class="accordion-icon w-6 h-6 text-frend-accent transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="accordion-content hidden px-6 pb-5">
+                        <div class="pt-4 border-t border-frend-slate/50">
+                            <p class="text-frend-muted mb-4">
+                                BDO hadde behov for et internt verktøy for BDOs konsulenter for visualisering av selskapsstruktur samt visning av omfattende opplysninger om selskapene basert på dataene hentet ut fra Proff.no sitt API.
+                            </p>
+                            <p class="text-frend-muted mb-4">
+                                Resultatet er en webapplikasjon som bistår BDOs konsulenter under rådgivning og den komplette salgsprosessen. Prosjektet ble gjennomført i samarbeid med BDO sitt interne utviklerteam. Prosjektet brukte Scrum metodikken.
+                            </p>
+                            <p class="text-frend-text mb-2 font-medium">Ansvar og oppgaver:</p>
+                            <ul class="text-frend-muted space-y-2 ml-4">
+                                <li>• Bemanning og styring av ressurser, oppfølging av fremdrift, bistand i testing</li>
+                                <li>• Sikring av funksjonelle krav, workshopledelse</li>
+                                <li>• Rapportering til prosjekteier i BDO Buskerud</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Accordion Item 6: Rørgrossisten -->
+                <div class="accordion-item bg-frend-slate/30 rounded-xl border border-frend-slate/50 overflow-hidden">
+                    <button onclick="toggleAccordion(this)" class="accordion-header w-full px-6 py-5 flex items-center justify-between text-left hover:bg-frend-slate/50 transition-colors">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl">🛒</span>
+                            <div>
+                                <h3 class="font-semibold text-frend-text">Rørgrossisten – Ny e-handelsplattform i VVS-bransjen</h3>
+                                <p class="text-sm text-frend-muted">Teknisk Prosjektleder • 04.2019 - 02.2021</p>
+                            </div>
+                        </div>
+                        <svg class="accordion-icon w-6 h-6 text-frend-accent transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="accordion-content hidden px-6 pb-5">
+                        <div class="pt-4 border-t border-frend-slate/50">
+                            <p class="text-frend-muted mb-4">
+                                Kunden hadde behov for å utvikle en ny e-handel løsning som kunne håndtere stor vekst, vesentlig økning i trafikk samt mange titusentalls produkter.
+                            </p>
+                            <p class="text-frend-muted mb-4">
+                                Marcin var først teknisk prosjektleder/teamleder for utviklingsteamet, deretter overtok han fullt ansvar for prosjektets leveranse. I 2020 leverte teamet en robust løsning laget i Magento 2 med skreddersydd integrasjon mot Cordel-ERP system, som imøtekom kundens behov, som ble videreutviklet i senere fase.
+                            </p>
+                            <p class="text-frend-text mb-2 font-medium">Ansvar og oppgaver:</p>
+                            <ul class="text-frend-muted space-y-2 ml-4">
+                                <li>• Rekruttering, bemanning og styring av ressurser (både interne og eksterne)</li>
+                                <li>• Planlegging, oppfølging av fremdrift, rapportering; overordnet funksjonell testing</li>
+                                <li>• Koordinering av arbeidet i et eksternt utviklerteam av sertifiserte Magento2-utviklere</li>
+                                <li>• Videreutvikling av nye funksjonaliteter etter at prosjektet ble satt i drift</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Accordion Item 7: Scanox AS -->
+                <div class="accordion-item bg-frend-slate/30 rounded-xl border border-frend-slate/50 overflow-hidden">
+                    <button onclick="toggleAccordion(this)" class="accordion-header w-full px-6 py-5 flex items-center justify-between text-left hover:bg-frend-slate/50 transition-colors">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl">🎨</span>
+                            <div>
+                                <h3 class="font-semibold text-frend-text">Scanox AS (Jotun) – Fargevelger mobilapp</h3>
+                                <p class="text-sm text-frend-muted">Prosjektleder / Rådgiver • 11.2019 - 03.2020</p>
+                            </div>
+                        </div>
+                        <svg class="accordion-icon w-6 h-6 text-frend-accent transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="accordion-content hidden px-6 pb-5">
+                        <div class="pt-4 border-t border-frend-slate/50">
+                            <p class="text-frend-muted mb-4">
+                                Scanox AS (datterselskap i Jotun AS) ønsket en mobilapplikasjon for å hjelpe forbrukere med valg av farger og malingtyper. Forprosjektet resulterte i komplett kravspesifikasjon og prototype som lot brukere velge farger basert på interiørstiler og lysforhold.
+                            </p>
+                            <p class="text-frend-text mb-2 font-medium">Ansvar og oppgaver:</p>
+                            <ul class="text-frend-muted space-y-2 ml-4">
+                                <li>• Gjennomføring av forprosjekt: behovsanalyse, kravspesifikasjon, teknisk konsept</li>
+                                <li>• Fasilitering av workshops og intervjuer med målgruppen</li>
+                                <li>• Sourcing av IT-partner fra utlandet for implementering</li>
+                                <li>• Koordinering av prototypeutvikling</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Accordion Item 8: Kalma Interiør -->
+                <div class="accordion-item bg-frend-slate/30 rounded-xl border border-frend-slate/50 overflow-hidden">
+                    <button onclick="toggleAccordion(this)" class="accordion-header w-full px-6 py-5 flex items-center justify-between text-left hover:bg-frend-slate/50 transition-colors">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl">🛋️</span>
+                            <div>
+                                <h3 class="font-semibold text-frend-text">Kalma Interiør – Moderne e-handelsplattform</h3>
+                                <p class="text-sm text-frend-muted">Teknisk Prosjektleder / Utvikler • 04.2019 - 11.2019</p>
+                            </div>
+                        </div>
+                        <svg class="accordion-icon w-6 h-6 text-frend-accent transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="accordion-content hidden px-6 pb-5">
+                        <div class="pt-4 border-t border-frend-slate/50">
+                            <p class="text-frend-muted mb-4">
+                                Utvikling av moderne e-handelsplattform for møbel- og innredningsforhandler med integrasjon mot Visma.net ERP. Løsningen inkluderte automatisert synkronisering av produkter, brukere og ordrer, samt integrasjon med Bring, VIPPS og Klarna.
+                            </p>
+                            <p class="text-frend-text mb-2 font-medium">Ansvar og oppgaver:</p>
+                            <ul class="text-frend-muted space-y-2 ml-4">
+                                <li>• Kravspesifikasjon, ressursstyring og kostnadsoppfølging</li>
+                                <li>• Koordinering av teknisk implementering</li>
+                                <li>• Frontend-utvikling og support etter lansering</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Accordion Item 9: K. Aspelund AS -->
+                <div class="accordion-item bg-frend-slate/30 rounded-xl border border-frend-slate/50 overflow-hidden">
+                    <button onclick="toggleAccordion(this)" class="accordion-header w-full px-6 py-5 flex items-center justify-between text-left hover:bg-frend-slate/50 transition-colors">
+                        <div class="flex items-center gap-4">
+                            <span class="text-2xl">🏬</span>
+                            <div>
+                                <h3 class="font-semibold text-frend-text">K. Aspelund AS – Ny nettbutikk</h3>
+                                <p class="text-sm text-frend-muted">Utvikler / Rådgiver • 01.2018 - 07.2018</p>
+                            </div>
+                        </div>
+                        <svg class="accordion-icon w-6 h-6 text-frend-accent transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="accordion-content hidden px-6 pb-5">
+                        <div class="pt-4 border-t border-frend-slate/50">
+                            <p class="text-frend-muted mb-4">
+                                Detaljhandelskunde ønsket å starte netthandel i tillegg til fysiske butikker. Utviklet fleksibel e-handelsplattform med integrasjon mot Visma Global ERP, tilpasset for mange kampanjer og tusenvis av produkter.
+                            </p>
+                            <p class="text-frend-text mb-2 font-medium">Ansvar og oppgaver:</p>
+                            <ul class="text-frend-muted space-y-2 ml-4">
+                                <li>• Full-stack utvikling: frontend (HTML5, CSS3, JS) og backend (PHP7.0)</li>
+                                <li>• Integrasjon mellom WooCommerce og Visma Global</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- PRESENTASJONER / FOREDRAG SECTION -->
+    <!-- ============================================ -->
+    <section class="py-24 px-4 relative">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-2 bg-frend-accent/10 border border-frend-accent/30 rounded-full text-frend-accent text-sm font-medium mb-6">
+                    🎤 Kunnskapsdeling i praksis
+                </span>
+                <h2 class="font-serif text-4xl md:text-5xl mb-4">
+                    Presentasjoner & <span class="gradient-text italic">foredrag</span>
+                </h2>
+                <p class="text-xl text-frend-muted">Interne workshops og opplæringer hos Bouvet</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                
+                <!-- Presentation 1: RAG -->
+                <div class="cert-card bg-frend-slate/30 rounded-2xl p-6 border border-frend-slate/50">
+                    <img src="assets/images/img-08.jpg" 
+                         alt="RAG-arkitektur presentasjon" 
+                         class="cert-thumbnail w-full h-48 object-cover object-center rounded-lg mb-4"
+                         onclick="openLightbox(this.src)">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-frend-accent text-sm">Februar 2025</span>
+                        <span class="px-2 py-1 bg-frend-slate/50 rounded text-xs text-frend-muted">Bouvet internt</span>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">RAG-arkitektur</h3>
+                    <p class="text-sm text-frend-muted">Teknisk workshop om RAG arkitektur, implementering, testing samt muligheter den teknologien gir.</p>
+                </div>
+                
+                <!-- Presentation 2: AI Agenter -->
+                <div class="cert-card bg-frend-slate/30 rounded-2xl p-6 border border-frend-slate/50">
+                    <img src="assets/images/img-09.jpg" 
+                         alt="AI Agenter presentasjon" 
+                         class="cert-thumbnail w-full h-48 object-cover object-center rounded-lg mb-4"
+                         onclick="openLightbox(this.src)">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-frend-accent text-sm">April 2025</span>
+                        <span class="px-2 py-1 bg-frend-slate/50 rounded text-xs text-frend-muted">Bouvet internt</span>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">AI Agenter (+ No-Code)</h3>
+                    <p class="text-sm text-frend-muted">Konseptet AI-agenter med eksempler (ManusAI), ReACT rammeverk, agent­arkitekturer, samt fremtidige muligheter.</p>
+                </div>
+                
+                <!-- Presentation 3: AI for ledere -->
+                <div class="cert-card bg-frend-slate/30 rounded-2xl p-6 border border-frend-slate/50">
+                    <img src="assets/images/img-10.jpg" 
+                         alt="AI for ledere presentasjon" 
+                         class="cert-thumbnail w-full h-48 object-cover object-center rounded-lg mb-4"
+                         onclick="openLightbox(this.src)">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-frend-accent text-sm">Mai 2025</span>
+                        <span class="px-2 py-1 bg-frend-slate/50 rounded text-xs text-frend-muted">Bouvet internt</span>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Potensialet for AI i lederens arbeid</h3>
+                    <p class="text-sm text-frend-muted">Intro til GenAI for ledere, Master Prompt, praktiske use cases for ledelse, optimalisering av arbeid.</p>
+                </div>
+                
+                <!-- Presentation 4: AI i produktutvikling -->
+                <div class="cert-card bg-frend-slate/30 rounded-2xl p-6 border border-frend-slate/50">
+                    <img src="assets/images/img-11.jpg" 
+                         alt="AI i produktutvikling presentasjon" 
+                         class="cert-thumbnail w-full h-48 object-cover object-center rounded-lg mb-4"
+                         onclick="openLightbox(this.src)">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-frend-accent text-sm">November 2025</span>
+                        <span class="px-2 py-1 bg-frend-slate/50 rounded text-xs text-frend-muted">Bouvet internt</span>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">AI som partner i produktutvikling</h3>
+                    <p class="text-sm text-frend-muted">Fra hypotesetesting til raskere utvikling – bruk av AI i produktutviklingsworkflow, fra idé til prototyping.</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- CTA / CONTACT SECTION -->
+    <!-- ============================================ -->
+    <section class="py-24 px-4 relative">
+        <div class="max-w-4xl mx-auto text-center">
+            
+            <h2 class="font-serif text-4xl md:text-5xl mb-6">
+                Vil du vite <span class="gradient-text italic">mer?</span>
+            </h2>
+            <p class="text-xl text-frend-muted mb-12">
+                Jeg ser virkelig frem til muligheten til å bli en Frend! 🚀
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                <a href="https://drive.google.com/file/d/142T0Y0xMMICGXZs5wMbFLFflBh384WNG/view?usp=sharing" 
+                   target="_blank"
+                   class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-frend-accent to-purple-500 hover:from-frend-accent-light hover:to-purple-400 rounded-xl font-medium transition-all duration-300 hover:scale-105">
+                    📄 Last ned CV
+                </a>
+                <a href="https://www.linkedin.com/in/marcin-bialecki1989/" 
+                   target="_blank"
+                   class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-frend-slate/50 hover:bg-frend-slate border border-frend-slate/50 hover:border-frend-accent/50 rounded-xl font-medium transition-all duration-300 hover:scale-105">
+                    💼 LinkedIn
+                </a>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row gap-8 justify-center items-center text-frend-muted">
+                <a href="mailto:marcinbialeckiz@gmail.com" class="flex items-center gap-2 hover:text-frend-accent transition-colors">
+                    <span class="text-xl">📧</span>
+                    marcinbialeckiz@gmail.com
+                </a>
+                <a href="tel:+4792509844" class="flex items-center gap-2 hover:text-frend-accent transition-colors">
+                    <span class="text-xl">📱</span>
+                    +47 925 09 844
+                </a>
+            </div>
+            
+        </div>
+    </section>
+
+    
+    <!-- ============================================ -->
+    <!-- REFERANSER SECTION -->
+    <!-- ============================================ -->
+    <section class="py-24 px-4 bg-frend-navy/50 relative">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-2 bg-frend-accent/10 border border-frend-accent/30 rounded-full text-frend-accent text-sm font-medium mb-6">
+                    💬 Hva andre sier
+                </span>
+                <h2 class="font-serif text-4xl md:text-5xl mb-4">
+                    Referanser & <span class="gradient-text italic">anbefalinger</span>
+                </h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Reference 1: Jolanta Øen -->
+                <div class="bg-frend-slate/30 rounded-2xl p-6 border border-frend-slate/50 hover:border-frend-accent/30 transition-all">
+                    <p class="text-frend-muted text-sm leading-relaxed mb-4 italic">
+                        "Marcin har i mange år støttet oss i IT-prosjekter for Jobselect, inkludert bygging av nettsider og konfigurasjon av ulike IT-systemer. Han har alltid vist profesjonalitet, engasjement og høy kvalitet i arbeidet. Jeg anbefaler ham som en erfaren IT-spesialist."
+                    </p>
+                    <div class="border-t border-frend-slate/50 pt-4">
+                        <p class="font-semibold text-frend-text">Jolanta Øen</p>
+                        <p class="text-xs text-frend-muted">Eier, Jobselect Holding AS</p>
+                    </div>
+                </div>
+                
+                <!-- Reference 2: Simen Henriksen -->
+                <div class="bg-frend-slate/30 rounded-2xl p-6 border border-frend-slate/50 hover:border-frend-accent/30 transition-all">
+                    <p class="text-frend-muted text-sm leading-relaxed mb-4 italic">
+                        "Hadde gleden av å jobbe med Marcin over en periode. Marcin leverte alltid toppnivå, og løp alltid den ekstra milen. Selvgående men også god lagspiller 🔥 Anbefales!"
+                    </p>
+                    <div class="border-t border-frend-slate/50 pt-4">
+                        <p class="font-semibold text-frend-text">Simen Henriksen</p>
+                        <p class="text-xs text-frend-muted">Marketing Manager, Eier i Eldorado Hub AS</p>
+                    </div>
+                </div>
+                
+                <!-- Reference 3: Kenneth C. Koppervik -->
+                <div class="bg-frend-slate/30 rounded-2xl p-6 border border-frend-slate/50 hover:border-frend-accent/30 transition-all">
+                    <p class="text-frend-muted text-sm leading-relaxed mb-4 italic">
+                        "Jeg har hatt gleden av å jobbe med Marcin og kan på det sterkeste anbefale ham. Han er målrettet person med en imponerende teknologisk kompetanse. Marcin har en unik evne til å se det store bildet samtidig som han effektivt styrer komplekse prosesser."
+                    </p>
+                    <div class="border-t border-frend-slate/50 pt-4">
+                        <p class="font-semibold text-frend-text">Kenneth C. Koppervik</p>
+                        <p class="text-xs text-frend-muted">Daglig Leder, Hubro Digital AS</p>
+                    </div>
+                </div>
+                
+                <!-- Reference 4: Thomas W. Nyheim -->
+                <div class="bg-frend-slate/30 rounded-2xl p-6 border border-frend-slate/50 hover:border-frend-accent/30 transition-all">
+                    <p class="text-frend-muted text-sm leading-relaxed mb-4 italic">
+                        "Marcin and WLC delivered great work. The team delivered tasks on time and budget, showcasing their adaptability. They were also highly responsive to questions, resulting in a smooth engagement with the client. Overall, the partnership was highly successful."
+                    </p>
+                    <div class="border-t border-frend-slate/50 pt-4">
+                        <p class="font-semibold text-frend-text">Thomas W. Nyheim</p>
+                        <p class="text-xs text-frend-muted">Head of Web Development, NYG AS</p>
+                    </div>
+                </div>
+                
+                <!-- Reference 5: Gunn K. Vestgård -->
+                <div class="bg-frend-slate/30 rounded-2xl p-6 border border-frend-slate/50 hover:border-frend-accent/30 transition-all">
+                    <p class="text-frend-muted text-sm leading-relaxed mb-4 italic">
+                        "Marcin leverte sammen med sitt team Gjerdekalkulator-løsningen med eksepsjonell kvalitet og imponerende tempo. Hans fokus på kvalitet var tydelig i alle deler av prosjektet. Dialogen og oppfølgingen fra Marcin var fremragende."
+                    </p>
+                    <div class="border-t border-frend-slate/50 pt-4">
+                        <p class="font-semibold text-frend-text">Gunn K. Vestgård</p>
+                        <p class="text-xs text-frend-muted">Markedsansvarlig, Garda Sikring AS</p>
+                    </div>
+                </div>
+                
+                <!-- Reference 6: Marianne S. Hansen -->
+                <div class="bg-frend-slate/30 rounded-2xl p-6 border border-frend-slate/50 hover:border-frend-accent/30 transition-all">
+                    <p class="text-frend-muted text-sm leading-relaxed mb-4 italic">
+                        "Marcin har i mange år hjulpet oss med nettsiden og nettbutikken for Smaken Av Grimstad. Hans profesjonalitet, pålitelighet og tekniske kompetanse har vært uvurderlige. Vi anbefaler ham på det varmeste som en dyktig og engasjert samarbeidspartner."
+                    </p>
+                    <div class="border-t border-frend-slate/50 pt-4">
+                        <p class="font-semibold text-frend-text">Marianne S. Hansen</p>
+                        <p class="text-xs text-frend-muted">Salgs- og Markedssjef, Smaken av Grimstad AS</p>
+                    </div>
+                </div>
+                
+                <!-- Reference 7: Slawomir Lech -->
+                <div class="bg-frend-slate/30 rounded-2xl p-6 border border-frend-slate/50 hover:border-frend-accent/30 transition-all">
+                    <p class="text-frend-muted text-sm leading-relaxed mb-4 italic">
+                        "I had the pleasure of working with Marcin at Godt Sagt, where he served as my Project Manager on various assignments. Throughout our collaboration, Marcin demonstrated excellent leadership skills and a remarkable ability to understand and manage the technical aspects of each project."
+                    </p>
+                    <div class="border-t border-frend-slate/50 pt-4">
+                        <p class="font-semibold text-frend-text">Slawomir Lech</p>
+                        <p class="text-xs text-frend-muted">CTO, Automa.net</p>
+                    </div>
+                </div>
+                
+                <!-- Reference 8: Erik Gabrielsen -->
+                <div class="bg-frend-slate/30 rounded-2xl p-6 border border-frend-slate/50 hover:border-frend-accent/30 transition-all">
+                    <p class="text-frend-muted text-sm leading-relaxed mb-4 italic">
+                        "Vi er svært fornøyde med samarbeidet med Marcin og WLC. De leverer som avtalt, er pålitelige og viser engasjement for at vi som kunde skal bli fornøyde."
+                    </p>
+                    <div class="border-t border-frend-slate/50 pt-4">
+                        <p class="font-semibold text-frend-text">Erik Gabrielsen</p>
+                        <p class="text-xs text-frend-muted">Leder marked, kommunikasjon og bærekraft, Garda Sikring AS</p>
+                    </div>
+                </div>
+                
+                <!-- Reference 9: Iwona Niewęgłowska -->
+                <div class="bg-frend-slate/30 rounded-2xl p-6 border border-frend-slate/50 hover:border-frend-accent/30 transition-all">
+                    <p class="text-frend-muted text-sm leading-relaxed mb-4 italic">
+                        "Jeg fikk mer enn jeg forventet. Hele kurset har enorm verdi og ble gjennomgått på høyeste nivå. Kunnskapen i Marcins kurs overgikk mine forventninger om AI. Det mest nyttige var kunnskapen om personalisering av ChatGPT, oppretting av egen nettbutikk, samt den siste modulen om å lage oppsummeringer fra materialer og skape podcaster eller presentasjoner."
+                    </p>
+                    <div class="border-t border-frend-slate/50 pt-4">
+                        <p class="font-semibold text-frend-text">Iwona Niewęgłowska</p>
+                        <p class="text-xs text-frend-muted">Eier av nettbutikken Endless Passion</p>
+                    </div>
+                </div>
+                
+                <!-- Reference 10: Katarzyna Czulińska -->
+                <div class="bg-frend-slate/30 rounded-2xl p-6 border border-frend-slate/50 hover:border-frend-accent/30 transition-all">
+                    <p class="text-frend-muted text-sm leading-relaxed mb-4 italic">
+                        "Marcins kurs oppfylte forventningene og mer til – det åpnet øynene mine for at dette er fremtiden og et svært nyttig, allsidig verktøy for forretningsdrift. Det mest verdifulle var grunnleggende forståelse når Marcin forklarte hva GenAI er på en enkel måte. Da vi laget en fungerende nettbutikk på én leksjon – det var imponerende!"
+                    </p>
+                    <div class="border-t border-frend-slate/50 pt-4">
+                        <p class="font-semibold text-frend-text">Katarzyna Czulińska</p>
+                        <p class="text-xs text-frend-muted">Eier av flere apotek</p>
+                    </div>
+                </div>
+                
+                <!-- Reference 11: Michał Żurawiecki -->
+                <div class="bg-frend-slate/30 rounded-2xl p-6 border border-frend-slate/50 hover:border-frend-accent/30 transition-all">
+                    <p class="text-frend-muted text-sm leading-relaxed mb-4 italic">
+                        "Mitt mål før kurset var større generell kunnskap om AI og konkrete verktøy for daglig arbeid. Marcins kurs oppfylte mine forventninger med praktisk informasjon. Kunnskapen fra kurset hjelper meg i hverdagen. Det mest verdifulle for meg var kunnskapen om RAG-lignende systemer."
+                    </p>
+                    <div class="border-t border-frend-slate/50 pt-4">
+                        <p class="font-semibold text-frend-text">Michał Żurawiecki</p>
+                        <p class="text-xs text-frend-muted">Eier, HUSAR ARKITEKTER AS</p>
+                    </div>
+                </div>
+                
+                <!-- Reference 12: Janek Hubrich -->
+                <div class="bg-frend-slate/30 rounded-2xl p-6 border border-frend-slate/50 hover:border-frend-accent/30 transition-all">
+                    <p class="text-frend-muted text-sm leading-relaxed mb-4 italic">
+                        "The course met my expectations. I learned useful tools for generating graphics and automating processes in my business. The module on creating graphics and websites was especially valuable. Thanks to practical tips, I managed to automate several processes in my company, which saved time and increased efficiency. Highly recommended!"
+                    </p>
+                    <div class="border-t border-frend-slate/50 pt-4">
+                        <p class="font-semibold text-frend-text">Janek Hubrich</p>
+                        <p class="text-xs text-frend-muted">Eier, JaHu83 Brand Printing</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- PRESENTATION PHOTO -->
+    <!-- ============================================ -->
+    <section class="py-12 px-4 relative">
+        <div class="max-w-4xl mx-auto">
+            <div class="rounded-2xl overflow-hidden shadow-2xl">
+                <img src="assets/images/img-12.jpg" 
+                     alt="Marcin Białecki holder presentasjon om AI i produktutvikling" 
+                     class="w-full h-auto">
+            </div>
+            <p class="text-center text-frend-muted text-sm mt-4">Bouvet intern workshop: AI som partner i produktutvikling, November 2025</p>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- FOOTER -->
+    <!-- ============================================ -->
+    <footer class="py-8 px-4 border-t border-frend-slate/30">
+        <div class="max-w-6xl mx-auto text-center text-frend-muted text-sm">
+            <p>
+                Laget med 🤖 AI og ❤️ av Marcin Białecki | 
+                <span class="text-frend-accent">Bli min Frend</span> © 2026
+            </p>
+        </div>
+    </footer>
+
+    <!-- ============================================ -->
+    <!-- LIGHTBOX -->
+    <!-- ============================================ -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close" onclick="closeLightbox()">×</button>
+        <img id="lightbox-img" src="" alt="Certificate">
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SCRIPTS -->
+    <!-- ============================================ -->
+    <script>
+        // Mer om meg toggle
+        function toggleMerOmMeg() {
+            const content = document.getElementById('mer-om-meg-content');
+            const btnText = document.getElementById('mer-om-meg-btn-text');
+            const icon = document.getElementById('mer-om-meg-icon');
+            
+            content.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+            
+            if (content.classList.contains('hidden')) {
+                btnText.textContent = 'Les mer om meg';
+            } else {
+                btnText.textContent = 'Vis mindre';
+            }
+        }
+
+        // Accordion functions
+        function toggleAccordion(button) {
+            const item = button.closest('.accordion-item');
+            const content = item.querySelector('.accordion-content');
+            const icon = item.querySelector('.accordion-icon');
+            
+            // Close all other accordions
+            document.querySelectorAll('.accordion-item').forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.querySelector('.accordion-content').classList.add('hidden');
+                    otherItem.querySelector('.accordion-icon').classList.remove('rotate-180');
+                }
+            });
+            
+            // Toggle current accordion
+            content.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+
+        // Lightbox functions
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        // Close lightbox on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+
+        // Scroll to top function
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Chat is now handled by Dify iframe
+    </script>
+
+<!-- Scroll to Top Button -->
+    <button id="scroll-to-top" onclick="scrollToTop()" class="fixed bottom-6 right-6 w-14 h-14 bg-gradient-to-r from-frend-accent to-purple-500 hover:from-frend-accent-light hover:to-purple-400 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 z-50">
+        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
+
+
+</div>
 </body>
 </html>
